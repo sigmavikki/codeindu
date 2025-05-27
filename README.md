@@ -13,7 +13,7 @@ Welcome to CodeIndu's frontend repository! This project is built using [Next.js]
 
 1. **Clone the Repository**:
     ```bash
-    git clone https://github.com/your-repo/codeindu-frontend.git
+    git clone https://github.com/sigmavikki/codeindu.git
     cd codeindu-frontend
     ```
 
