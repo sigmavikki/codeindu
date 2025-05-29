@@ -18,12 +18,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "SigmaCodeX - Decode the Future",
+  title: "CodeIndu - Decode the Future",
   icons: {
     icon: "/favicon.ico",
   },
   description:
-    "SigmaCodeX is a cutting-edge AI-powered code generation platform that helps developers write code faster and more efficiently.",
+    "CodeIndu is a cutting-edge AI-powered code generation platform that helps developers write code faster and more efficiently.",
   keywords: [
     "AI",
     "code generation",

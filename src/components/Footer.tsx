@@ -33,7 +33,7 @@ export default function Footer() {
                     </span>
                   </div>
                   <span className="text-lg font-bold tracking-tight font-mono text-white">
-                    SigmaCodeX
+                    CodeIndu
                   </span>
                 </div>
 
@@ -173,7 +173,7 @@ export default function Footer() {
                 <ul className="space-y-2">
                   <li className="flex items-center gap-2 text-gray-400 text-sm">
                     <Mail size={14} />
-                    <span>contact@sigmacodeX.dev</span>
+                    <span>contact@CodeIndu.dev</span>
                   </li>
                   <li>
                     <Link
@@ -207,6 +207,7 @@ export default function Footer() {
                       Privacy Policy
                     </Link>
                   </li>
+                 
                 </ul>
               </div>
             </div>
@@ -228,6 +229,12 @@ export default function Footer() {
                   className="text-gray-500 hover:text-[#0066ff] text-sm"
                 >
                   Privacy
+                </Link>
+                <Link
+                  href="#"
+                  className="text-gray-500 hover:text-[#0066ff] text-sm"
+                >
+                  Refund 
                 </Link>
                 <Link
                   href="#"

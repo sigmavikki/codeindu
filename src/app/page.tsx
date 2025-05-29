@@ -2,15 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
-import {
-  ChevronDown,
-  Zap,
-  Code,
-  Shield,
-  Cpu,
-  Youtube,
-  Bell,
-} from "lucide-react";
+import { ChevronDown, Youtube, Bell } from "lucide-react";
 
 export default function HomePage() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -78,12 +70,7 @@ export default function HomePage() {
 
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 relative font-mono tracking-tight">
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-gray-200 to-white">
-              Code. Hack.{" "}
-              <span className="relative">
-                Build
-                <span className="absolute -inset-1 blur-sm bg-[#0066ff]/30 animate-pulse"></span>
-              </span>{" "}
-              Future.
+              Learn. Skills. Build. Future.
             </span>
             <div className="absolute -inset-0.5 bg-[#0066ff]/20 blur opacity-30 animate-pulse"></div>
           </h1>
@@ -102,26 +89,26 @@ export default function HomePage() {
               variant="outline"
               className="border-[#0066ff]/50 text-[#0066ff] hover:bg-[#0066ff]/10 px-8 py-6 rounded-md text-lg"
             >
-              Subscribe
+             Services
             </Button>
           </div>
 
           <div className="flex justify-center gap-8 md:gap-16 text-gray-400 mb-12">
             <div className="flex flex-col items-center">
               <span className="text-2xl md:text-3xl font-bold text-white mb-1">
-                250+
+                1+
               </span>
               <span className="text-sm font-mono">Videos</span>
             </div>
             <div className="flex flex-col items-center">
               <span className="text-2xl md:text-3xl font-bold text-white mb-1">
-                50K+
+                1+
               </span>
               <span className="text-sm font-mono">Subscribers</span>
             </div>
             <div className="flex flex-col items-center">
               <span className="text-2xl md:text-3xl font-bold text-white mb-1">
-                15+
+                1+
               </span>
               <span className="text-sm font-mono">Tools</span>
             </div>
@@ -140,28 +127,6 @@ export default function HomePage() {
             >
               <ChevronDown size={30} />
             </Button>
-          </div>
-
-          {/* Floating Icons */}
-          <div className="absolute top-1/4 left-[10%] hidden lg:block">
-            <div className="relative w-16 h-16 bg-[#0066ff]/10 rounded-lg backdrop-blur-sm flex items-center justify-center border border-[#0066ff]/20 animate-float">
-              <Code className="text-[#0066ff]" size={28} />
-            </div>
-          </div>
-          <div className="absolute bottom-1/3 right-[15%] hidden lg:block">
-            <div className="relative w-16 h-16 bg-[#cc00ff]/10 rounded-lg backdrop-blur-sm flex items-center justify-center border border-[#cc00ff]/20 animate-float-delay">
-              <Shield className="text-[#cc00ff]" size={28} />
-            </div>
-          </div>
-          <div className="absolute top-2/3 left-[20%] hidden lg:block">
-            <div className="relative w-16 h-16 bg-[#0066ff]/10 rounded-lg backdrop-blur-sm flex items-center justify-center border border-[#0066ff]/20 animate-float-delay-2">
-              <Cpu className="text-[#0066ff]" size={28} />
-            </div>
-          </div>
-          <div className="absolute top-1/3 right-[10%] hidden lg:block">
-            <div className="relative w-16 h-16 bg-[#cc00ff]/10 rounded-lg backdrop-blur-sm flex items-center justify-center border border-[#cc00ff]/20 animate-float-delay-3">
-              <Zap className="text-[#cc00ff]" size={28} />
-            </div>
           </div>
         </div>
       </section>

@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function CoursePage() {
   const [search, setSearch] = useState("");
@@ -13,39 +14,28 @@ export default function CoursePage() {
   const allCourses = [
     {
       id: 1,
-      title: "Mastering Next.js 14 with Server Actions",
-      thumbnail: "/images/courses/nextjs14.jpg",
+      title: "Mastering HTML 5 Complete Course 2025 - Learn Web Development",
+      thumbnail: "/images/courses/html.png",
       category: "Development",
+      originalPrice: 499,
+      discountedPrice: 49,
     },
     {
       id: 2,
-      title: "AI Prompt Engineering for Developers",
-      thumbnail: "/images/courses/prompt.jpg",
-      category: "AI",
+      title: "Mastering CSS Complete Course 2025 - Advanced Styling Techniques",
+      thumbnail: "/images/courses/coming.jpg",
+      category: "Development",
+      originalPrice: 499,
+      discountedPrice: 49,
     },
     {
       id: 3,
-      title: "Ethical Hacking and Cybersecurity Bootcamp",
-      thumbnail: "/images/courses/hacking.jpg",
-      category: "Security",
-    },
-    {
-      id: 4,
-      title: "Building SaaS with Django and Stripe",
-      thumbnail: "/images/courses/saas.jpg",
-      category: "Backend",
-    },
-    {
-      id: 5,
-      title: "Full Stack AI App with LangChain & OpenAI",
-      thumbnail: "/images/courses/langchain.jpg",
-      category: "AI",
-    },
-    {
-      id: 6,
-      title: "Real-Time Apps with WebSockets & Redis",
-      thumbnail: "/images/courses/realtime.jpg",
+      title:
+        "JavaScript Essentials: Learn Modern JavaScript for Web Development",
+      thumbnail: "/images/courses/coming.jpg",
       category: "Development",
+      originalPrice: 499,
+      discountedPrice: 49,
     },
   ];
 
@@ -139,6 +129,18 @@ export default function CoursePage() {
                   <div className="p-4">
                     <h2 className="text-lg font-bold mb-1">{course.title}</h2>
                     <p className="text-sm text-gray-400">{course.category}</p>
+                    <p className="text-sm text-gray-400">Duration: 90 Min</p>
+                    <div className="mt-2">
+                      <p className="text-sm text-gray-400 line-through">
+                        ₹{course.originalPrice}
+                      </p>
+                      <p className="text-base font-semibold text-[#00ff99]">
+                        Now ₹{course.discountedPrice}
+                      </p>
+                    </div>
+                    <button className="mt-3 px-4 py-2 cursor-pointer bg-[#0066ff] text-white rounded hover:bg-[#0052cc] transition">
+                      <Link href="/courses/html">View Course</Link>
+                    </button>
                   </div>
                 </div>
               ))}
