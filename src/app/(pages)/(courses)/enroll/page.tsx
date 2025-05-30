@@ -55,12 +55,12 @@ const RazorpayCloneUPI = () => {
 
           <div className="mt-8">
             <div className="text-sm text-white/70 mb-1">Price Summary</div>
-            <div className="text-2xl font-semibold">₹1</div>
+            <div className="text-2xl font-semibold">₹49</div>
           </div>
 
           <div className="mt-8 text-sm">
             Using as <br />
-            <span className="font-medium">+91 73803 65225</span>
+            <span className="font-medium">+91 73803 65295</span>
           </div>
           <div className="text-xs text-white/40 mt-auto pt-10">
             Secured by Razorpay
