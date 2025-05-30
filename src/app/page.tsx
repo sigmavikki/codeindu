@@ -84,13 +84,14 @@ export default function HomePage() {
           <div className="flex flex-col sm:flex-row items-center gap-4 mb-12">
             <Button
               className="bg-[#0066ff] hover:bg-[#0066ff]/90 text-white px-8 py-6 rounded-md text-lg cursor-pointer"
-              onClick={() => window.open("https://www.business.com", "_blank")}
+              onClick={() => (window.location.href = "/courses")}
             >
-              Business
+              Course
             </Button>
             <Button
               variant="outline"
-              className="border-[#0066ff]/50 text-[#0066ff] hover:bg-[#0066ff]/10 px-8 py-6 rounded-md text-lg"
+              className="border-[#0066ff]/50 text-[#0066ff] cursor-pointer hover:bg-[#fff] px-8 py-6 rounded-md text-lg"
+              onClick={() => (window.location.href = "/services")}
             >
               Services
             </Button>

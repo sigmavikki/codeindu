@@ -38,14 +38,14 @@ const RazorpayCloneUPI = () => {
 
   const handleVerify = () => {
     setStep("success");
-    setTimeout(() => router.push("/dashboard"), 10000);
+    setTimeout(() => router.push("/dashboard-students"), 10000);
   };
 
   return (
     <div className="min-h-screen bg-black flex items-center justify-center p-4">
       <div className="w-full max-w-4xl grid grid-cols-4 shadow-lg rounded-lg overflow-hidden">
         {/* Left Side */}
-        <div className="col-span-1 bg-[#ec1c24] p-4 text-white flex flex-col justify-between">
+        <div className="col-span-1 bg-[#2a3194] p-4 text-white flex flex-col justify-between">
           <div>
             <div className="font-bold text-lg">CodeIndu</div>
             <div className="text-xs text-white/70 mt-1">
@@ -83,7 +83,7 @@ const RazorpayCloneUPI = () => {
                 <div className="w-1/4 space-y-4 text-sm">
                   <div className="font-bold">Recommended</div>
                   <div className="bg-[#f3f3f3] rounded px-3 py-2 flex items-center space-x-2">
-                    <span className="text-[#ec1c24] font-bold">●</span>
+                    <span className="text-[#17f033] font-bold">●</span>
                     <span>UPI</span>
                   </div>
                   <div className="text-gray-400">Cards</div>
