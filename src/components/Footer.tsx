@@ -27,11 +27,6 @@ export default function Footer() {
             <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
               <div className="col-span-1 md:col-span-1">
                 <div className="flex items-center gap-2 mb-4">
-                  <div className="w-8 h-8 bg-gradient-to-br from-[#0066ff] to-[#cc00ff] rounded-md flex items-center justify-center">
-                    <span className="text-white font-bold text-lg font-mono">
-                      Σ
-                    </span>
-                  </div>
                   <span className="text-lg font-bold tracking-tight font-mono text-white">
                     CodeIndu
                   </span>
@@ -44,13 +39,13 @@ export default function Footer() {
 
                 <div className="flex gap-3">
                   <Link
-                    href="#"
+                    href="https://www.youtube.com/@codeindu"
                     className="w-8 h-8 rounded-full bg-[#0066ff]/10 flex items-center justify-center text-gray-400 hover:text-white hover:bg-[#0066ff]/20"
                   >
                     <Youtube size={16} />
                   </Link>
                   <Link
-                    href="#"
+                    href="https://github.com/sigmavikki"
                     className="w-8 h-8 rounded-full bg-[#0066ff]/10 flex items-center justify-center text-gray-400 hover:text-white hover:bg-[#0066ff]/20"
                   >
                     <Github size={16} />
@@ -173,7 +168,7 @@ export default function Footer() {
                 <ul className="space-y-2">
                   <li className="flex items-center gap-2 text-gray-400 text-sm">
                     <Mail size={14} />
-                    <span>contact@CodeIndu.dev</span>
+                    <span>saasgenix@gmail.com</span>
                   </li>
                   <li>
                     <Link
@@ -207,7 +202,6 @@ export default function Footer() {
                       Privacy Policy
                     </Link>
                   </li>
-                 
                 </ul>
               </div>
             </div>
@@ -219,25 +213,25 @@ export default function Footer() {
 
               <div className="flex gap-6 mt-4 md:mt-0">
                 <Link
-                  href="#"
+                  href="terms"
                   className="text-gray-500 hover:text-[#0066ff] text-sm"
                 >
-                  Terms
+                  Terms & Conditions
                 </Link>
                 <Link
-                  href="#"
+                  href="privacy"
                   className="text-gray-500 hover:text-[#0066ff] text-sm"
                 >
                   Privacy
                 </Link>
                 <Link
-                  href="#"
+                  href="refund"
                   className="text-gray-500 hover:text-[#0066ff] text-sm"
                 >
-                  Refund 
+                  Refund
                 </Link>
                 <Link
-                  href="#"
+                  href="cookies"
                   className="text-gray-500 hover:text-[#0066ff] text-sm"
                 >
                   Cookies

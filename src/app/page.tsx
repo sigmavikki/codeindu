@@ -76,20 +76,23 @@ export default function HomePage() {
           </h1>
 
           <p className="text-lg md:text-xl text-gray-400 max-w-3xl mb-8">
-            Join the elite community of developers, ethical hackers, AI
-            enthusiasts and tech innovators breaking boundaries and building the
-            next generation of technology.
+            Learn new skills, build innovative solutions, and shape the future
+            of technology with our elite community of developers, ethical
+            hackers, AI enthusiasts, and tech innovators.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center gap-4 mb-12">
-            <Button className="bg-[#0066ff] hover:bg-[#0066ff]/90 text-white px-8 py-6 rounded-md text-lg">
-              Explore Content
+            <Button
+              className="bg-[#0066ff] hover:bg-[#0066ff]/90 text-white px-8 py-6 rounded-md text-lg cursor-pointer"
+              onClick={() => window.open("https://www.business.com", "_blank")}
+            >
+              Business
             </Button>
             <Button
               variant="outline"
               className="border-[#0066ff]/50 text-[#0066ff] hover:bg-[#0066ff]/10 px-8 py-6 rounded-md text-lg"
             >
-             Services
+              Services
             </Button>
           </div>
 
@@ -98,7 +101,7 @@ export default function HomePage() {
               <span className="text-2xl md:text-3xl font-bold text-white mb-1">
                 1+
               </span>
-              <span className="text-sm font-mono">Videos</span>
+              <span className="text-sm font-mono">Clients</span>
             </div>
             <div className="flex flex-col items-center">
               <span className="text-2xl md:text-3xl font-bold text-white mb-1">

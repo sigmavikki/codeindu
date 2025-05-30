@@ -2,22 +2,33 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Github, Youtube, Twitter } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-export default function Header() {
+export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const navLinks = [
+    { href: "/", label: "Home" },
+    { href: "/services", label: "Services" },
+    { href: "/induware", label: "InduWare" },
+    { href: "/courses", label: "Course" },
+    { href: "/blogs", label: "Blog" },
+    { href: "/about-us", label: "About Us" },
+    { href: "/contact-us", label: "Contact Us" },
+  ];
 
   return (
     <header
@@ -29,71 +40,35 @@ export default function Header() {
       )}
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
+        {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
-          <div className="relative w-10 h-10 bg-gradient-to-br from-[#0066ff] to-[#cc00ff] rounded-md flex items-center justify-center overflow-hidden">
-            <span className="text-white font-bold text-xl font-mono">Σ</span>
-            <div className="absolute inset-0 bg-gradient-to-tr from-transparent to-[#0066ff]/40 opacity-70"></div>
-          </div>
-          <span
-            className={cn(
-              "text-xl font-bold tracking-tight font-mono",
-              isScrolled ? "text-white" : "text-white"
-            )}
-          >
+          <span className="text-xl font-bold tracking-tight font-mono text-white">
             CodeIndu
           </span>
         </Link>
 
+        {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-6">
-          <Link
-            href="/"
-            className="text-sm text-gray-300 hover:text-[#0066ff] transition-colors"
-          >
-            Home
-          </Link>
-          <Link
-            href="services"
-            className="text-sm text-gray-300 hover:text-[#0066ff] transition-colors"
-          >
-            Services
-          </Link>
-          <Link
-            href="/courses"
-            className="text-sm text-gray-300 hover:text-[#0066ff] transition-colors"
-          >
-            Course
-          </Link>
-
-          <Link
-            href="youtube"
-            className="text-sm text-gray-300 hover:text-[#0066ff] transition-colors"
-          >
-            Youtube
-          </Link>
-
-          <Link
-            href="/blogs"
-            className="text-sm text-gray-300 hover:text-[#0066ff] transition-colors"
-          >
-            Blog
-          </Link>
-          <Link
-            href="about-us"
-            className="text-sm text-gray-300 hover:text-[#0066ff] transition-colors"
-          >
-            About Us
-          </Link>
-          <Link
-            href="contact-us"
-            className="text-sm text-gray-300 hover:text-[#0066ff] transition-colors"
-          >
-            Contact Us
-          </Link>
+          {navLinks.map(({ href, label }) => (
+            <Link
+              key={href}
+              href={href}
+              className={cn(
+                "text-sm transition-colors",
+                pathname === href
+                  ? "text-[#0066ff] font-semibold"
+                  : "text-gray-300 hover:text-[#0066ff]"
+              )}
+            >
+              {label}
+            </Link>
+          ))}
         </nav>
 
+        {/* Socials + Login */}
         <div className="hidden md:flex items-center gap-3">
           <Link
-            href="https://github.com/sigma-vikki"
+            href="https://github.com/sigmavikki"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -107,7 +82,7 @@ export default function Header() {
           </Link>
 
           <Link
-            href="https://www.youtube.com/@SigmaCode_X"
+            href="https://www.youtube.com/@codeindu"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -119,20 +94,23 @@ export default function Header() {
               <Youtube size={18} />
             </Button>
           </Link>
+
           <Button
             variant="ghost"
             size="icon"
-            className="text-gray-300 hover:text-white hover:bg-[#0066ff]/20"
+            className="text-gray-300 hover:text-white hover:bg-[#0066ff]/20 cursor-pointer"
           >
             <Twitter size={18} />
           </Button>
-          <Link href="/login" target="_blank" rel="noopener noreferrer">
+
+          <Link href="/login">
             <Button className="bg-gradient-to-r from-[#0066ff] to-[#cc00ff] text-white hover:opacity-90 cursor-pointer">
               Login
             </Button>
           </Link>
         </div>
 
+        {/* Mobile Menu Toggle */}
         <Button
           variant="ghost"
           size="icon"
@@ -143,38 +121,24 @@ export default function Header() {
         </Button>
       </div>
 
-      {/* Mobile menu */}
+      {/* Mobile Menu */}
       {isMenuOpen && (
         <div className="fixed inset-0 top-16 bg-black/95 backdrop-blur-md z-40 md:hidden">
           <div className="flex flex-col p-4 gap-4">
-            <Link
-              href="/"
-              className="text-lg py-3 px-4 text-white border-b border-gray-800 hover:bg-[#0066ff]/10"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Home
-            </Link>
-            <Link
-              href="/blogs"
-              className="text-lg py-3 px-4 text-white border-b border-gray-800 hover:bg-[#0066ff]/10"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Blog
-            </Link>
-            <Link
-              href="#content"
-              className="text-lg py-3 px-4 text-white border-b border-gray-800 hover:bg-[#0066ff]/10"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Content
-            </Link>
-            <Link
-              href="#videos"
-              className="text-lg py-3 px-4 text-white border-b border-gray-800 hover:bg-[#0066ff]/10"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Videos
-            </Link>
+            {navLinks.map(({ href, label }) => (
+              <Link
+                key={href}
+                href={href}
+                className={cn(
+                  "text-lg py-3 px-4 text-white border-b border-gray-800 hover:bg-[#0066ff]/10",
+                  pathname === href &&
+                    "bg-[#0066ff]/10 text-[#0066ff] font-semibold"
+                )}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {label}
+              </Link>
+            ))}
 
             <div className="flex gap-3 px-4 py-3">
               <Button
@@ -205,8 +169,9 @@ export default function Header() {
                 <Twitter size={18} />
               </Button>
             </div>
+
             <Link
-              href="https://www.youtube.com/@SigmaCode_X"
+              href="https://www.youtube.com/@codeindu"
               target="_blank"
               rel="noopener noreferrer"
             >
