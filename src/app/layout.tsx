@@ -18,12 +18,40 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "CodeIndu - Decode the Future",
+  title: "CodeIndu - AI-Powered Software Development and Consultancy Services",
+  authors: [
+    {
+      name: "CodeIndu Team",
+      url: "https://codeindu.com",
+    },
+    {
+      name: "Vikki Verma",
+      url: "https://vikkiverma.com",
+    },
+  ],
+  creator: "CodeIndu Team",
+  openGraph: {
+    title: "CodeIndu - AI-Powered Software Development",
+    description:
+      "CodeIndu is a cutting-edge AI-powered code Software Development and Skills base Consultancy services provider.",
+    url: "https://codeindu.com",
+    siteName: "CodeIndu",
+    images: [
+      {
+        url: "https://codeindu.com/logo.png",
+        width: 1200,
+        height: 630,
+        alt: "CodeIndu - AI-Powered Software Development",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
   icons: {
     icon: "/favicon.ico",
   },
   description:
-    "CodeIndu is a cutting-edge AI-powered code generation platform that helps developers write code faster and more efficiently.",
+    "CodeIndu is a cutting-edge AI-powered code Software Development and Skills base Consultancy services provider.",
   keywords: [
     "AI",
     "code generation",
