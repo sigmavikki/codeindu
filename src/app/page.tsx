@@ -1,12 +1,203 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ChevronDown, Youtube, Bell } from "lucide-react";
+import { ChevronDown } from "lucide-react";
+import { motion } from "framer-motion";
+import {
+  FaCode,
+  FaLaptopCode,
+  FaCogs,
+  FaProjectDiagram,
+  FaRobot,
+  FaMobileAlt,
+  FaClock,
+  FaUserCheck,
+  FaUsers,
+  FaMoneyBillWave,
+  FaHeartbeat,
+  FaGraduationCap,
+  FaShoppingCart,
+  FaTruckMoving,
+  FaRocket,
+  FaGlobeAsia,
+  FaClipboardList,
+  FaDraftingCompass,
+  FaVial,
+  FaHandshake,
+  FaWhatsapp,
+  FaEnvelope,
+} from "react-icons/fa";
 
 export default function HomePage() {
+  // Services
+  const services = [
+    {
+      icon: <FaCode className="text-blue-500 text-3xl" />,
+      title: "Custom Software Development",
+      desc: "Tailor-made software solutions designed to match your business logic.",
+      descHindi:
+        "100% custom software jo aapke business logic ke hisaab se banaya jaata hai.",
+    },
+    {
+      icon: <FaLaptopCode className="text-green-500 text-3xl" />,
+      title: "Business Website Development",
+      desc: "Modern, responsive, and conversion-driven websites for startups & enterprises.",
+      descHindi: "High-performance website jo trust aur traffic dono laaye.",
+    },
+    {
+      icon: <FaProjectDiagram className="text-purple-500 text-3xl" />,
+      title: "SaaS Tools & Dashboards",
+      desc: "Productized tools and dashboards with real-time analytics.",
+      descHindi:
+        "SaaS tools aur dashboards jo client aur admin dono ke liye useful hote hain.",
+    },
+    {
+      icon: <FaCogs className="text-yellow-500 text-3xl" />,
+      title: "Automation & Integration",
+      desc: "Connect your systems with automated workflows using APIs.",
+      descHindi:
+        "Manual kaam hataayein — APIs aur automation workflows ke saath.",
+    },
+    {
+      icon: <FaRobot className="text-red-500 text-3xl" />,
+      title: "AI-based Tools (Future Ready)",
+      desc: "AI integrations like chatbots, recommendations, and process automation.",
+      descHindi:
+        "Chatbot, prediction system jaise AI tools jo future-ready solutions hain.",
+    },
+    {
+      icon: <FaMobileAlt className="text-indigo-500 text-3xl" />,
+      title: "Mobile App Development",
+      desc: "Cross-platform Android & iOS apps tailored to your business.",
+      descHindi: "Android/iOS apps – fast, responsive aur brand-oriented.",
+    },
+  ];
+  // Why Choise us
+  const reasons = [
+    {
+      icon: <FaUserCheck className="text-blue-500 text-3xl" />,
+      title: "Personalized Development",
+      desc: "We build exactly what you need – tailored to your vision and logic.",
+      descHindi:
+        "Har project aapke business ke hisaab se customize kiya jaata hai.",
+    },
+    {
+      icon: <FaUsers className="text-green-500 text-3xl" />,
+      title: "India-Based Trusted Team",
+      desc: "Reliable, skilled professionals you can communicate with easily.",
+      descHindi:
+        "Bharat ka trusted aur responsive development team – no outsourcing mess.",
+    },
+    {
+      icon: <FaMoneyBillWave className="text-yellow-500 text-3xl" />,
+      title: "Cost-effective & Scalable",
+      desc: "Affordable pricing with future-proof scalability.",
+      descHindi:
+        "Kam cost mein aapko milta hai scalable aur high-quality solution.",
+    },
+    {
+      icon: <FaClock className="text-red-500 text-3xl" />,
+      title: "Timely Delivery & Satisfaction",
+      desc: "We deliver on time with a 100% satisfaction mindset.",
+      descHindi:
+        "Time par delivery aur complete transparency ke saath client-first focus.",
+    },
+  ];
+  // Indures we serve
+  const industries = [
+    {
+      icon: <FaHeartbeat className="text-pink-500 text-3xl" />,
+      title: "Healthcare",
+      desc: "Secure & scalable healthcare tech for hospitals and clinics.",
+      descHindi: "Hospital aur medical sector ke liye digital solutions.",
+    },
+    {
+      icon: <FaGraduationCap className="text-indigo-500 text-3xl" />,
+      title: "Education",
+      desc: "EdTech tools for institutes, online courses, and training platforms.",
+      descHindi:
+        "Online classes, LMS aur institutes ke liye customized portals.",
+    },
+    {
+      icon: <FaShoppingCart className="text-yellow-500 text-3xl" />,
+      title: "Retail",
+      desc: "E-commerce platforms, POS, and inventory systems.",
+      descHindi: "E-commerce websites, billing aur inventory ke liye apps.",
+    },
+    {
+      icon: <FaTruckMoving className="text-green-500 text-3xl" />,
+      title: "Logistics",
+      desc: "Real-time tracking, dispatch & automation systems.",
+      descHindi:
+        "Transport aur delivery ke liye automation & tracking software.",
+    },
+    {
+      icon: <FaRocket className="text-red-500 text-3xl" />,
+      title: "Startups",
+      desc: "Tech architecture & MVPs for scaling new-age businesses.",
+      descHindi: "Naye startups ke liye fast MVPs aur scalable tools.",
+    },
+    {
+      icon: <FaGlobeAsia className="text-blue-500 text-3xl" />,
+      title: "More Domains",
+      desc: "Custom solutions for various industries globally.",
+      descHindi: "Multiple sectors ke liye global tech solutions.",
+    },
+  ];
+  // Our Process
+  const steps = [
+    {
+      icon: <FaClipboardList className="text-blue-500 text-3xl" />,
+      title: "1. Requirement Gathering",
+      desc: "We understand your needs, goals, and challenges.",
+      descHindi: "Sabse pehle hum aapki requirements ko clearly samajhte hain.",
+    },
+    {
+      icon: <FaDraftingCompass className="text-yellow-400 text-3xl" />,
+      title: "2. Planning & Design",
+      desc: "We design UI/UX and architect the system for performance and scalability.",
+      descHindi:
+        "Project ka blueprint aur design banaya jaata hai – visually aur technically.",
+    },
+    {
+      icon: <FaCode className="text-green-500 text-3xl" />,
+      title: "3. Development",
+      desc: "We write clean, scalable, and optimized code – frontend to backend.",
+      descHindi:
+        "Software ko code kiya jaata hai – har feature carefully develop hota hai.",
+    },
+    {
+      icon: <FaVial className="text-red-500 text-3xl" />,
+      title: "4. Testing & Delivery",
+      desc: "We rigorously test before delivering the final product.",
+      descHindi:
+        "Delivery se pehle sab kuch test kiya jaata hai – quality guarantee ke saath.",
+    },
+    {
+      icon: <FaHandshake className="text-purple-500 text-3xl" />,
+      title: "5. Ongoing Support",
+      desc: "We stay with you – updates, maintenance, and future upgrades.",
+      descHindi:
+        "Baad mein bhi support milta hai – technical issues aur updates ke liye.",
+    },
+  ];
+  // Contact Forms
+  const [form, setForm] = useState({ name: "", email: "", idea: "" });
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // 👉 Integrate with backend / email service here
+    alert("Form submitted! We’ll contact you shortly.");
+  };
+
   const containerRef = useRef<HTMLDivElement>(null);
-  const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -29,6 +220,7 @@ export default function HomePage() {
 
   return (
     <main className="bg-[#0a0a0a] text-white">
+      {/* Hero Section 1 */}
       <section
         ref={containerRef}
         className="relative min-h-screen flex items-center justify-center pt-16 pb-10 overflow-hidden"
@@ -63,22 +255,22 @@ export default function HomePage() {
 
         <div className="container mx-auto px-4 flex flex-col items-center text-center z-10">
           <div className="glitch-container relative mb-4 inline-flex">
-            <div className="text-sm font-mono uppercase tracking-wider text-[#0066ff] py-1 px-3 rounded-full bg-[#0066ff]/10 border border-[#0066ff]/20 mb-4">
-              Welcome to the future of tech content
+            <div className="text-sm font-mono uppercase tracking-wider text-[#e5f0ff] py-1 px-3 rounded-full bg-[#0066ff]/10 border border-[#0066ff]/20 mb-4">
+              CodeIndu - Code Innovative Network for Digital Upliftment.
             </div>
           </div>
 
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 relative font-mono tracking-tight">
+          <h1 className="text-4xl md:text-4xl lg:text-6xl font-bold mb-6 relative font-mono tracking-tight">
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-gray-200 to-white">
-              Learn. Skills. Build. Future.
+              We code what you imagine.
             </span>
             <div className="absolute -inset-0.5 bg-[#0066ff]/20 blur opacity-30 animate-pulse"></div>
           </h1>
 
           <p className="text-lg md:text-xl text-gray-400 max-w-3xl mb-8">
-            Learn new skills, build innovative solutions, and shape the future
-            of technology with our elite community of developers, ethical
-            hackers, AI enthusiasts, and tech innovators.
+            At CodeIndu, we don’t just code — we engineer possibilities. From
+            startups to enterprises, we build tailor-made solutions in web,
+            mobile, and AI that align with your business vision.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center gap-4 mb-12">
@@ -86,14 +278,14 @@ export default function HomePage() {
               className="bg-[#0066ff] hover:bg-[#0066ff]/90 text-white px-8 py-6 rounded-md text-lg cursor-pointer"
               onClick={() => (window.location.href = "/courses")}
             >
-              Course
+              Lets builds
             </Button>
             <Button
               variant="outline"
               className="border-[#0066ff]/50 text-[#0066ff] cursor-pointer hover:bg-[#fff] px-8 py-6 rounded-md text-lg"
               onClick={() => (window.location.href = "/services")}
             >
-              Services
+              Explore Services
             </Button>
           </div>
 
@@ -135,57 +327,179 @@ export default function HomePage() {
         </div>
       </section>
       {/* Sections 2:-  */}
-      <section
-        ref={sectionRef}
-        id="about"
-        className="bg-[#0a0a0a] text-white py-16 px-4"
-      >
-        <div className="container mx-auto">
-          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-center">
-            About Us
+      <section id="services" className="py-16 bg-[#0e0e0e] text-white">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">
+            Our Services{" "}
           </h2>
-          <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto mb-8 text-center">
-            We are a community of developers, ethical hackers, AI enthusiasts,
-            and tech innovators who are passionate about breaking boundaries and
-            building the next generation of technology. Our mission is to
-            empower individuals with the knowledge and skills they need to
-            succeed in the fast-paced world of technology.
-          </p>
-          <div className="flex justify-center">
-            <Button className="bg-[#0066ff] hover:bg-[#0066ff]/90 text-white px-8 py-4 rounded-md text-lg">
-              Join Us
-            </Button>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {services.map((service, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="bg-[#1a1a1a] p-6 rounded-2xl hover:shadow-lg hover:scale-105 transition-all duration-300"
+              >
+                <div className="mb-4">{service.icon}</div>
+                <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
+                <p className="text-sm text-gray-300">{service.desc}</p>
+                <p className="text-sm text-gray-400 italic mt-2">
+                  {service.descHindi}
+                </p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
-      {/* Sections 03:- Serices */}
-      <section className="bg-[#0a0a0a] text-white py-16 px-4">
-        <div className="container mx-auto">
-          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-center">
-            Our Services
+      {/* Section 3:- Why Choise us */}
+      <section id="why-choose" className="py-16 bg-[#0c0c0c] text-white">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">
+            Why Choose <span className="text-blue-500">CodeIndu?</span>
           </h2>
-          <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto mb-8 text-center">
-            We offer a wide range of services to help you succeed in the world
-            of technology. From coding tutorials to ethical hacking courses, we
-            have something for everyone.
-          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {reasons.map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="bg-[#1a1a1a] p-6 rounded-2xl hover:shadow-xl hover:scale-105 transition-all duration-300"
+              >
+                <div className="mb-4">{item.icon}</div>
+                <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
+                <p className="text-sm text-gray-300">{item.desc}</p>
+                <p className="text-sm text-gray-400 italic mt-2">
+                  {item.descHindi}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+      {/* Section 4:- Industries serve  */}
+      <section id="industries" className="py-16 bg-[#0e0e0e] text-white">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">
+            Industries We Serve{" "}
+          </h2>
+
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Service Card */}
-            <div className="bg-[#1a1a1a] p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <Youtube className="text-[#0066ff] mb-4" size={40} />
-              <h3 className="text-xl font-bold mb-2">Coding Tutorials</h3>
-              <p className="text-gray-400">
-                Learn to code with our comprehensive tutorials and resources.
-              </p>
-            </div>
-            {/* Service Card */}
-            <div className="bg-[#1a1a1a] p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <Bell className="text-[#cc00ff] mb-4" size={40} />
-              <h3 className="text-xl font-bold mb-2">Ethical Hacking</h3>
-              <p className="text-gray-400">
-                Master the art of ethical hacking with our expert-led courses.
-              </p>
-            </div>
+            {industries.map((industry, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="bg-[#1a1a1a] p-6 rounded-2xl hover:shadow-xl hover:scale-105 transition-all duration-300"
+              >
+                <div className="mb-4">{industry.icon}</div>
+                <h3 className="text-xl font-semibold mb-2">{industry.title}</h3>
+                <p className="text-sm text-gray-300">{industry.desc}</p>
+                <p className="text-sm text-gray-400 italic mt-2">
+                  {industry.descHindi}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Section 5 */}
+      <section id="our-process" className="py-16 bg-[#0b0b0b] text-white">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+            Our Process{" "}
+          </h2>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {steps.map((step, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="bg-[#1a1a1a] p-6 rounded-2xl hover:shadow-xl hover:scale-105 transition-all duration-300"
+              >
+                <div className="mb-4">{step.icon}</div>
+                <h3 className="text-xl font-semibold mb-2">{step.title}</h3>
+                <p className="text-sm text-gray-300">{step.desc}</p>
+                <p className="text-sm text-gray-400 italic mt-2">
+                  {step.descHindi}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+      {/* Section 6 : Contact */}
+      <section id="contact" className="bg-[#0b0b0b] text-white py-16">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">
+            Contact Us{" "}
+          </h2>
+
+          <p className="text-center text-gray-400 mb-12">
+            Have an idea? Let&apos;s build something amazing together. <br />
+            Koi project plan hai? Hum aapke liye solution banayenge - fast,
+            scalable aur reliable.
+          </p>
+
+          <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-6">
+            <input
+              name="name"
+              placeholder="Your Name"
+              className="bg-[#1a1a1a] p-4 rounded-xl border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              onChange={handleChange}
+              required
+            />
+            <input
+              name="email"
+              type="email"
+              placeholder="Your Email"
+              className="bg-[#1a1a1a] p-4 rounded-xl border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              onChange={handleChange}
+              required
+            />
+            <textarea
+              name="idea"
+              rows={4}
+              placeholder="Project Idea"
+              className="bg-[#1a1a1a] p-4 rounded-xl border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              onChange={handleChange}
+              required
+            ></textarea>
+
+            <button
+              type="submit"
+              className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-xl transition duration-300"
+            >
+              🚀 Let &lsquo s Build Your Solution
+            </button>
+          </form>
+
+          <div className="mt-10 flex flex-col md:flex-row items-center justify-center gap-6 text-gray-300">
+            <a
+              href="https://wa.me/917380365295"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 hover:text-green-500 transition"
+            >
+              <FaWhatsapp /> Chat on WhatsApp
+            </a>
+            <a
+              href="mailto:hello@codeindu.com"
+              className="flex items-center gap-2 hover:text-yellow-400 transition"
+            >
+              <FaEnvelope /> Email: hello@codeindu.com
+            </a>
           </div>
         </div>
       </section>

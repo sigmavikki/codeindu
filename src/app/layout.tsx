@@ -18,22 +18,32 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "CodeIndu - AI-Powered Software Development and Consultancy Services",
+  title: "CodeIndu - Code Innovative Network for Digital Upliftment",
+  description:
+    "CodeIndu is an AI-driven software and consultancy company delivering custom tools, websites, and programs tailored for startups and enterprises.",
+  keywords: [
+    "CodeIndu",
+    "AI software development",
+    "Custom web development",
+    "Tech consultancy India",
+    "SaaS tools",
+    "Digital transformation",
+    "Full stack development",
+    "Next.js agency",
+    "Django API development",
+    "Startup software partner",
+  ],
   authors: [
     {
-      name: "CodeIndu Team",
-      url: "https://codeindu.com",
-    },
-    {
       name: "Vikki Verma",
-      url: "https://vikkiverma.com",
+      url: "https://codeindu.com/about-us/",
     },
   ],
   creator: "CodeIndu Team",
   openGraph: {
-    title: "CodeIndu - AI-Powered Software Development",
+    title: "CodeIndu - AI-Powered Software Development & Tech Solutions",
     description:
-      "CodeIndu is a cutting-edge AI-powered code Software Development and Skills base Consultancy services provider.",
+      "CodeIndu builds high-impact software, tools, and AI-based systems to help businesses scale and innovate faster. India's trusted digital tech partner.",
     url: "https://codeindu.com",
     siteName: "CodeIndu",
     images: [
@@ -41,7 +51,7 @@ export const metadata: Metadata = {
         url: "https://codeindu.com/logo.png",
         width: 1200,
         height: 630,
-        alt: "CodeIndu - AI-Powered Software Development",
+        alt: "CodeIndu logo",
       },
     ],
     locale: "en_US",
@@ -50,19 +60,6 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.ico",
   },
-  description:
-    "CodeIndu is a cutting-edge AI-powered code Software Development and Skills base Consultancy services provider.",
-  keywords: [
-    "AI",
-    "code generation",
-    "machine learning",
-    "natural language processing",
-    "software development",
-    "programming",
-    "automation",
-    "productivity",
-    "technology",
-  ],
 };
 
 export default function RootLayout({
