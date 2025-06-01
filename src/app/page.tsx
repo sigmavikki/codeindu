@@ -276,7 +276,7 @@ export default function HomePage() {
           <div className="flex flex-col sm:flex-row items-center gap-4 mb-12">
             <Button
               className="bg-[#0066ff] hover:bg-[#0066ff]/90 text-white px-8 py-6 rounded-md text-lg cursor-pointer"
-              onClick={() => (window.location.href = "/courses")}
+              onClick={() => (window.location.href = "/contact-us")}
             >
               Lets builds
             </Button>
@@ -481,7 +481,7 @@ export default function HomePage() {
               type="submit"
               className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-xl transition duration-300"
             >
-              🚀 Let &lsquo s Build Your Solution
+              🚀 Let&apos;s Build Your Solution
             </button>
           </form>
 
