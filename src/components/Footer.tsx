@@ -172,7 +172,7 @@ export default function Footer() {
                   </li>
                   <li>
                     <Link
-                      href="#"
+                      href="about-us"
                       className="text-gray-400 hover:text-[#0066ff] text-sm"
                     >
                       About Us
@@ -196,10 +196,10 @@ export default function Footer() {
                   </li>
                   <li>
                     <Link
-                      href="#"
+                      href="feedback"
                       className="text-gray-400 hover:text-[#0066ff] text-sm"
                     >
-                      Privacy Policy
+                      Feedback
                     </Link>
                   </li>
                 </ul>
@@ -222,7 +222,7 @@ export default function Footer() {
                   href="privacy"
                   className="text-gray-500 hover:text-[#0066ff] text-sm"
                 >
-                  Privacy
+                  Privacy Policy
                 </Link>
                 <Link
                   href="refund"
@@ -231,10 +231,10 @@ export default function Footer() {
                   Refund
                 </Link>
                 <Link
-                  href="cookies"
+                  href="disclaimer"
                   className="text-gray-500 hover:text-[#0066ff] text-sm"
                 >
-                  Cookies
+                  Disclaimer
                 </Link>
               </div>
             </div>
