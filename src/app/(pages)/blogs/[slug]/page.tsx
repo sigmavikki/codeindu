@@ -8,7 +8,7 @@ const blog = {
   title: "🛡️ We're Hiring: Ethical Hackers (Hybrid | Paid | Skill-Based Role)",
   author: "Vikki Verma",
   publishedAt: "2025-06-4",
-  views: "12K",
+  views: "500 +",
   content: `
 Join the Cyber Defense Revolution 🚨
 MENDSEC INNOVATIONS PRIVATE LIMITED, a government-registered cybersecurity firm based in Gomti Nagar, Lucknow (UP), is actively looking for skilled ethical hackers to join our growing internal Red Team Force.
