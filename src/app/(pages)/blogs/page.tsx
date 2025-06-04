@@ -18,14 +18,15 @@ interface BlogSummary {
 const dummyBlogs: BlogSummary[] = [
   {
     id: "1",
-    slug: "future-of-ai-software",
-    title: "The Future of AI in Software Engineering",
+    slug: "we-are-hiring-ethical-hacker",
+    title:
+      "🛡️ We're Hiring: Ethical Hackers (Hybrid | Paid | Skill-Based Role)",
     excerpt:
-      "Explore how AI is transforming software development workflows and the impact it will have over the next decade...",
-    publishedAt: "2025-05-20",
-    author: "Saraji Kolhyseg",
+      "We are offering paid hybrid opportunities — both full-time and part-time — based on your skills, tool expertise, and real-world offensive security capabilities.",
+    publishedAt: "2025-06-4",
+    author: "Vikki Verma",
     views: "12K",
-    image: "/blog1.jpg",
+    image: "/images/blogs/blogs1.jpeg",
   },
   {
     id: "2",

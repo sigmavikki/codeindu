@@ -5,22 +5,57 @@ import Link from "next/link";
 import Image from "next/image";
 
 const blog = {
-  title: "The Future of AI in Software Engineering",
-  author: "Saraji Kolhyseg",
-  publishedAt: "2025-05-20",
+  title: "🛡️ We're Hiring: Ethical Hackers (Hybrid | Paid | Skill-Based Role)",
+  author: "Vikki Verma",
+  publishedAt: "2025-06-4",
   views: "12K",
   content: `
-Artificial Intelligence (AI) is not just a trend but a revolution in how software is built...
-Over the next decade, AI will integrate with every step of the SDLC, from code suggestion to testing and deployment.
-  `,
-  image: "/blog1.jpg",
+Join the Cyber Defense Revolution 🚨
+MENDSEC INNOVATIONS PRIVATE LIMITED, a government-registered cybersecurity firm based in Gomti Nagar, Lucknow (UP), is actively looking for skilled ethical hackers to join our growing internal Red Team Force.
+
+We are offering paid hybrid opportunities — both full-time and part-time — based on your skills, tool expertise, and real-world offensive security capabilities.
+
+🔍 Who We're Looking For:
+Deep understanding of ethical hacking, exploit development, and CVEs
+
+Hands-on experience with tools like Burp Suite, Metasploit, Nmap, Wireshark, etc.
+
+Exposure to web application, network, cloud, or API penetration testing
+
+🧠 Why Join MendSec?
+💰 Fixed, skill-based pay structure
+
+🔐 Work under NDAs in a professional white-hat setup
+
+🔭 Long-term cybersecurity research opportunities
+
+✅ Direct work with a registered cybersecurity firm
+
+📬 How to Apply:
+Interested candidates can send their CV or portfolio, along with their preferred working mode (Full-time / Part-time), to:
+
+📧 vikki.verma@mendsec.com
+📱 WhatsApp: +91 7380365295
+
+Let's Defend the Digital Frontier — Legally and Intelligently.
+🧠 Serious professionals only. White-hat ethics mandatory. All applicants are subject to NDA and background verification.
+
+
+Poster: MENDSEC Hiring Drive 20251
+
+Google forms:
+
+Link:- https://forms.gle/ZQCRXhh7igLcfM8t6 
+
+`,
+  image: "/images/blogs/blogs1.jpeg",
 };
 
 const initialComments = [
   {
     id: 1,
     name: "John Doe",
-    comment: "This is mind-blowing. AI is truly the future.",
+    comment: "Thanks you.",
   },
   { id: 2, name: "Jane Smith", comment: "Thanks for the insightful write-up!" },
 ];
