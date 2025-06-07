@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import AdBanner from "@/components/adsense/AdBanner";
 
 const blog = {
   title: "🛡️ We're Hiring: Ethical Hackers (Hybrid | Paid | Skill-Based Role)",
@@ -93,6 +94,16 @@ function loadAdSense() {
   window.adsbygoogle = window.adsbygoogle || [];
   window.adsbygoogle.push({});
 }
+{
+  /* Google ads */
+}
+<div className="bg-black mb-5">
+  <AdBanner
+    dataAdFormat="auto"
+    dataFullWidthResponsive={true}
+    dataAdSlot="6247561145"
+  />
+</div>;
 
 export default function BlogDetailPage() {
   const [comments, setComments] = useState(initialComments);
@@ -143,9 +154,18 @@ export default function BlogDetailPage() {
               className="adsbygoogle"
               style={{ display: "block", textAlign: "center" }}
               data-ad-client="ca-pub-2797234004548975"
-              data-ad-slot="1234567890"
+              data-ad-slot="6247561145"
               data-ad-format="auto"
               data-full-width-responsive="true"
+            />
+          </div>
+
+          {/* Google ads */}
+          <div className="bg-black mb-5">
+            <AdBanner
+              dataAdFormat="auto"
+              dataFullWidthResponsive={true}
+              dataAdSlot="6247561145"
             />
           </div>
 
@@ -224,6 +244,14 @@ export default function BlogDetailPage() {
                 </div>
               </Link>
             ))}
+          </div>
+          {/* Google ads */}
+          <div className="bg-black mb-5">
+            <AdBanner
+              dataAdFormat="auto"
+              dataFullWidthResponsive={true}
+              dataAdSlot="6247561145"
+            />
           </div>
         </div>
       </div>

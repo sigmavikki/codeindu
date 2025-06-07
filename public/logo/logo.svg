@@ -1,0 +1,35 @@
+<svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="svg126119" viewBox="0 0 1024 768" height="768px" width="1024px" version="1.1">
+  <metadata id="metadata126125">
+    <rdf:rdf>
+      <cc:work rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"></dc:type>
+      </cc:work>
+    </rdf:rdf>
+  </metadata>
+  <defs id="defs126123"></defs>
+  <linearGradient spreadMethod="pad" y2="30%" x2="-10%" y1="120%" x1="30%" id="3d_gradient2-logo-5e201086-fd8e-4217-a61a-640204e490d2">
+    <stop id="stop126100" stop-opacity="1" stop-color="#ffffff" offset="0%"></stop>
+    <stop id="stop126102" stop-opacity="1" stop-color="#000000" offset="100%"></stop>
+  </linearGradient>
+  <linearGradient gradientTransform="rotate(-30)" spreadMethod="pad" y2="30%" x2="-10%" y1="120%" x1="30%" id="3d_gradient3-logo-5e201086-fd8e-4217-a61a-640204e490d2">
+    <stop id="stop126105" stop-opacity="1" stop-color="#ffffff" offset="0%"></stop>
+    <stop id="stop126107" stop-opacity="1" stop-color="#cccccc" offset="50%"></stop>
+    <stop id="stop126109" stop-opacity="1" stop-color="#000000" offset="100%"></stop>
+  </linearGradient>
+  <g id="logo-group">
+    <image xlink:href="" id="container" x="272" y="144" width="480" height="480" style="display: none;" transform="translate(0 0)"></image>
+    <g id="logo-center" transform="translate(163.07282500000008 0)">
+      <image xlink:href="" id="icon_container" style="display: none;" x="0" y="0"></image>
+      <g id="slogan" style="font-style:normal;font-weight:500;font-size:32px;line-height:1;font-family:Roboto;font-variant-ligatures:none;text-align:center;text-anchor:middle" transform="translate(0 0)"></g>
+      <g id="title" style="font-style:normal;font-weight:normal;font-size:72px;line-height:1;font-family:'Brandmark Sans 41';font-variant-ligatures:normal;text-align:center;text-anchor:middle" transform="translate(0 0)">
+        <path id="path126128" style="font-style:normal;font-weight:normal;font-size:72px;line-height:1;font-family:'Brandmark Sans 41';font-variant-ligatures:normal;text-align:center;text-anchor:middle" d="m 338.64144,-18.72 h 18.648 c -1.08,-1.872 -1.44,-4.176 -1.008,-6.624 1.08,-5.76 6.768,-10.656 12.888,-10.656 h 8.352 c 6.12,0 10.152,4.896 9.144,10.656 -1.08,6.12 -6.768,10.944 -12.888,10.944 l -72.936,0.072 c -6.12,0 -10.152,-4.896 -9.072,-11.016 1.08,-5.76 6.768,-10.656 12.888,-10.656 h 8.352 c 3.96,0 7.056,2.016 8.496,5.04 h 18.36 c -0.432,-11.592 -8.712,-19.44 -21.816,-19.44 h -13.104 c -15.12,0 -27.936,10.8 -30.456,25.2 -2.52,14.4 6.264,25.2 21.384,25.2 h 77.616 c 15.12,0 27.936,-10.8 30.456,-25.2 2.52,-14.4 -6.264,-25.2 -21.384,-25.2 h -13.104 c -15.12,0 -27.936,10.8 -30.456,25.2 -0.432,2.232 -0.504,4.392 -0.36,6.48 z" stroke-width="0" stroke-linejoin="miter" stroke-miterlimit="2" fill="#a8f9ff" stroke="#a8f9ff" transform="translate(0 314.65000000000003) translate(50 37.4) scale(1.25) translate(-274.06096 50.4)"></path>
+        <path id="path126130" style="font-style:normal;font-weight:normal;font-size:72px;line-height:1;font-family:'Brandmark Sans 41';font-variant-ligatures:normal;text-align:center;text-anchor:middle" d="m 401.33431,0 h 36.432 c 15.12,0 27.936,-11.232 30.384,-25.2 2.448,-13.968 -6.336,-25.2 -21.456,-25.2 h -36.432 l -2.592,14.4 h 34.056 c 6.12,0 10.152,4.896 9.144,10.656 -1.08,6.12 -6.768,10.944 -12.888,10.944 h -16.848 l 3.096,-17.28 h -17.28 z" stroke-width="0" stroke-linejoin="miter" stroke-miterlimit="2" fill="#b9f9ff" stroke="#b9f9ff" transform="translate(0 314.65000000000003) translate(209.09168749999998 37.4) scale(1.25) translate(-401.33431 50.4)"></path>
+        <path id="path126132" style="font-style:normal;font-weight:normal;font-size:72px;line-height:1;font-family:'Brandmark Sans 41';font-variant-ligatures:normal;text-align:center;text-anchor:middle" d="M 471.21594,-31.68 465.59994,0 h 79.272 l 8.928,-50.4 h -17.28 l -6.408,36 h -44.712 l 0.792,-4.32 h 41.04 l 2.304,-12.96 z m 0.72,-4.32 h 58.32 l 2.592,-14.4 h -58.32 z" stroke-width="0" stroke-linejoin="miter" stroke-miterlimit="2" fill="#c9f8ff" stroke="#c9f8ff" transform="translate(0 314.65000000000003) translate(289.42372499999993 37.4) scale(1.25) translate(-465.59994 50.4)"></path>
+        <path id="path126134" style="font-style:normal;font-weight:normal;font-size:72px;line-height:1;font-family:'Brandmark Sans 41';font-variant-ligatures:normal;text-align:center;text-anchor:middle" d="m 557.50006,-50.4 -8.928,50.4 h 17.28 l 5.4,-30.6 21.24,30.6 h 20.88 l 8.928,-50.4 h -17.28 l -5.544,31.392 -21.816,-31.392 z" stroke-width="0" stroke-linejoin="miter" stroke-miterlimit="2" fill="#daf8ff" stroke="#daf8ff" transform="translate(0 314.65000000000003) translate(393.13887499999987 37.4) scale(1.25) translate(-548.57206 50.4)"></path>
+        <path id="path126136" style="font-style:normal;font-weight:normal;font-size:72px;line-height:1;font-family:'Brandmark Sans 41';font-variant-ligatures:normal;text-align:center;text-anchor:middle" d="m 730.31244,-23.616 c -1.008,5.544 -5.616,9.216 -15.336,9.216 -10.008,0 -13.032,-3.672 -12.024,-9.216 l 4.752,-26.784 h -81.864 l -2.592,14.4 h 64.656 l -2.232,12.384 c -2.808,15.84 3.816,24.336 26.64,24.336 22.104,0 32.472,-8.496 35.28,-24.336 l 4.752,-26.784 h -17.28 z M 616.91244,0 h 36.432 c 15.12,0 27.936,-11.232 30.384,-25.2 0.36,-2.232 0.504,-4.392 0.36,-6.48 h -18.72 c 1.08,1.8 1.512,3.96 1.08,6.336 -1.08,6.12 -6.768,10.944 -12.888,10.944 h -16.848 l 3.096,-17.28 h -17.28 z" stroke-width="0" stroke-linejoin="miter" stroke-miterlimit="2" fill="#eaf7ff" stroke="#eaf7ff" transform="translate(0 314.65000000000003) translate(478.5643499999999 37.4) scale(1.25) translate(-616.91244 50.4)"></path>
+      </g>
+      <image xlink:href="https://app.brandmark.io/nounpreview/1379093.png" id="icon" style="display: none;" x="0" y="0"></image>
+    </g>
+  </g>
+</svg>

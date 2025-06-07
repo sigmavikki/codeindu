@@ -1,5 +1,5 @@
 "use client";
-
+import Image from "next/image";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -25,7 +25,7 @@ export default function Navbar() {
     { href: "/services", label: "Services" },
     { href: "/induware", label: "InduWare" },
     { href: "/courses", label: "Course" },
-    { href: "/blogs", label: "Blog" },
+    { href: "/blogs", label: "Blogs" },
     { href: "/about-us", label: "About Us" },
     { href: "/contact-us", label: "Contact Us" },
   ];
@@ -33,28 +33,38 @@ export default function Navbar() {
   return (
     <header
       className={cn(
-        "fixed top-0 w-full z-50 transition-all duration-300",
+        "fixed top-0 w-full z-50 transition-all duration-300 h-16",
         isScrolled
           ? "bg-black/80 backdrop-blur-md border-b border-[#0066ff]/20 py-3"
           : "bg-transparent py-5"
       )}
     >
-      <div className="container mx-auto px-4 flex items-center justify-between">
+      <div className="container mx-auto px-4 flex items-center justify-between h-full">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
-          <span className="text-xl font-bold tracking-tight font-mono text-white">
-            CodeIndu
-          </span>
+          <Image
+            src="/logo/logo.svg"
+            alt="CodeIndu Logo"
+            width={80} // higher source resolution for crispness
+            height={80}
+            priority
+            quality={100}
+            style={{
+              maxHeight: "250px", // constrain visual height inside navbar (adjust if needed)
+              width: "auto",
+              height: "auto",
+            }}
+          />
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-6">
+        <nav className="hidden md:flex items-center gap-6 h-full">
           {navLinks.map(({ href, label }) => (
             <Link
               key={href}
               href={href}
               className={cn(
-                "text-sm transition-colors",
+                "text-sm transition-colors flex items-center h-full",
                 pathname === href
                   ? "text-[#0066ff] font-semibold"
                   : "text-gray-300 hover:text-[#0066ff]"
@@ -149,7 +159,7 @@ export default function Navbar() {
                 <Github size={18} />
               </Button>
               <Link
-                href="https://www.youtube.com/@SigmaCode_X"
+                href="https://www.youtube.com/@codeindu"
                 target="_blank"
                 rel="noopener noreferrer"
               >

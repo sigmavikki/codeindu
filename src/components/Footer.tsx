@@ -7,6 +7,7 @@ import {
   Linkedin,
   Mail,
 } from "lucide-react";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -26,44 +27,66 @@ export default function Footer() {
           <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
               <div className="col-span-1 md:col-span-1">
-                <div className="flex items-center gap-2 mb-4">
-                  <span className="text-lg font-bold tracking-tight font-mono text-white">
-                    CodeIndu
-                  </span>
-                </div>
+                {/* Logo */}
+                <Link href="/" className="flex items-center gap-2">
+                  <Image
+                    src="/logo/logo.svg"
+                    alt="CodeIndu Logo"
+                    width={150} // higher source resolution for crispness
+                    height={80}
+                    priority
+                    quality={100}
+                    style={{
+                      maxHeight: "150px", // constrain visual height inside navbar (adjust if needed)
+                      width: "auto",
+                      height: "auto",
+                    }}
+                  />
+                </Link>
 
-                <p className="text-gray-400 text-sm mb-6">
+                {/* <p className="text-gray-400 text-sm mb-6">
                   A tech content platform for coders, ethical hackers, AI
                   enthusiasts, and gadget lovers.
-                </p>
+                </p> */}
 
                 <div className="flex gap-3">
                   <Link
                     href="https://www.youtube.com/@codeindu"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-8 h-8 rounded-full bg-[#0066ff]/10 flex items-center justify-center text-gray-400 hover:text-white hover:bg-[#0066ff]/20"
                   >
                     <Youtube size={16} />
                   </Link>
                   <Link
                     href="https://github.com/sigmavikki"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-8 h-8 rounded-full bg-[#0066ff]/10 flex items-center justify-center text-gray-400 hover:text-white hover:bg-[#0066ff]/20"
                   >
                     <Github size={16} />
                   </Link>
                   <Link
-                    href="#"
+                    href="x.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-8 h-8 rounded-full bg-[#0066ff]/10 flex items-center justify-center text-gray-400 hover:text-white hover:bg-[#0066ff]/20"
                   >
                     <Twitter size={16} />
                   </Link>
                   <Link
-                    href="#"
+                    href="https://www.instagram.com/its_sigma_vikki/"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-8 h-8 rounded-full bg-[#0066ff]/10 flex items-center justify-center text-gray-400 hover:text-white hover:bg-[#0066ff]/20"
                   >
                     <Instagram size={16} />
                   </Link>
+
                   <Link
-                    href="#"
+                    href="https://linkedin.in"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-8 h-8 rounded-full bg-[#0066ff]/10 flex items-center justify-center text-gray-400 hover:text-white hover:bg-[#0066ff]/20"
                   >
                     <Linkedin size={16} />

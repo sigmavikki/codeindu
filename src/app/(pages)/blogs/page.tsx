@@ -1,5 +1,6 @@
 "use client";
 
+import AdBanner from "@/components/adsense/AdBanner";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -179,9 +180,17 @@ export default function BlogsPage() {
           className="adsbygoogle"
           style={{ display: "block", textAlign: "center" }}
           data-ad-client="ca-pub-2797234004548975"
-          data-ad-slot="1234567890"
+          data-ad-slot="6247561145"
           data-ad-format="auto"
           data-full-width-responsive="true"
+        />
+      </div>
+      {/* Google ads */}
+      <div className="bg-black mb-5">
+        <AdBanner
+          dataAdFormat="auto"
+          dataFullWidthResponsive={true}
+          dataAdSlot="6247561145"
         />
       </div>
     </div>
