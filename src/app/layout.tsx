@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Script from 'next/script';
+import Script from "next/script";
 // Components
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -9,17 +9,19 @@ import Footer from "@/components/Footer";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
+// Fonts
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
 });
-
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
 
+// ✅ SEO Metadata
 export const metadata: Metadata = {
+  metadataBase: new URL("https://codeindu.com"),
   title: "CodeIndu - Code Innovative Network for Digital Upliftment",
   description:
     "CodeIndu is an AI-driven software and consultancy company delivering custom tools, websites, and programs tailored for startups and enterprises.",
@@ -35,13 +37,13 @@ export const metadata: Metadata = {
     "Django API development",
     "Startup software partner",
   ],
+  creator: "CodeIndu Team",
   authors: [
     {
       name: "Vikki Verma",
       url: "https://codeindu.com/about-us/",
     },
   ],
-  creator: "CodeIndu Team",
   openGraph: {
     title: "CodeIndu - AI-Powered Software Development & Tech Solutions",
     description:
@@ -59,9 +61,28 @@ export const metadata: Metadata = {
     locale: "en_US",
     type: "website",
   },
+  twitter: {
+    card: "summary_large_image",
+    site: "@codeindu",
+    creator: "@codeindu",
+    title: "CodeIndu – Future of Software & SaaS in India",
+    description:
+      "Empowering startups and enterprises with smart automation, AI software, and cybersecurity tools.",
+    images: ["https://codeindu.com/twitter-card.jpg"],
+  },
   icons: {
     icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+    shortcut: "/favicon-32x32.png",
   },
+  alternates: {
+    canonical: "https://codeindu.com",
+    languages: {
+      "en-IN": "/",
+      "hi-IN": "/hi", // prepare for multilingual
+    },
+  },
+  
 };
 
 export default function RootLayout({
@@ -72,22 +93,28 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Google Analytics - gtag.js */}
+        {/* Google Analytics */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-Z0RMYJZG72"
           strategy="afterInteractive"
         />
-        <Script id="google-analytics" strategy="afterInteractive">
+        <Script id="gtag-init" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-Z0RMYJZG72');
+            gtag('config', 'G-Z0RMYJZG72', {
+              page_path: window.location.pathname,
+            });
           `}
         </Script>
+
+        {/* Preload logo/image assets */}
+        <link rel="preload" as="image" href="/logo.png" />
+        <link rel="preload" as="image" href="/og-banner.jpg" />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white text-neutral-900 dark:bg-black dark:text-white`}
       >
         <Navbar />
         {children}
