@@ -6,52 +6,16 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 interface BlogSummary {
-  id: string;
+  id: number;
   slug: string;
   title: string;
   excerpt: string;
-  publishedAt: string;
+  created_at: string;
   author: string;
-  views: string;
+  views: number;
   image: string;
+  category: string;
 }
-
-const dummyBlogs: BlogSummary[] = [
-  {
-    id: "1",
-    slug: "we-are-hiring-ethical-hacker",
-    title:
-      "🛡️ We're Hiring: Ethical Hackers (Hybrid | Paid | Skill-Based Role)",
-    excerpt:
-      "We are offering paid hybrid opportunities — both full-time and part-time — based on your skills, tool expertise, and real-world offensive security capabilities.",
-    publishedAt: "2025-06-4",
-    author: "Vikki Verma",
-    views: "12K",
-    image: "/images/blogs/blogs1.jpeg",
-  },
-  {
-    id: "2",
-    slug: "nextjs-13-best-practices",
-    title: "Next.js 13: Best Practices for Modern Web Apps",
-    excerpt:
-      "A deep dive into Next.js 13 features, routing, and how to architect scalable web applications using the latest framework...",
-    publishedAt: "2025-05-18",
-    author: "Leslie Alexander",
-    views: "54K",
-    image: "/blog2.jpg",
-  },
-  {
-    id: "3",
-    slug: "cybersecurity-prediction",
-    title: "From Reactive to Predictive Cybersecurity",
-    excerpt:
-      "Why AI-powered threat detection is the future of cybersecurity in a hyperconnected world...",
-    publishedAt: "2025-05-15",
-    author: "Courtney Henry",
-    views: "32K",
-    image: "/blog3.jpg",
-  },
-];
 
 declare global {
   interface Window {
@@ -71,10 +35,26 @@ function loadAdSense() {
 }
 
 export default function BlogsPage() {
+  const [blogs, setBlogs] = useState<BlogSummary[]>([]);
   const [selectedCategory, setSelectedCategory] = useState("All");
+  const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
     loadAdSense();
+
+    async function fetchBlogs() {
+      try {
+        const res = await fetch(
+          "https://codeindu-api-ju0w.onrender.com/api/blogs/"
+        );
+        const data = await res.json();
+        setBlogs(data);
+      } catch (error) {
+        console.error("Failed to fetch blogs:", error);
+      }
+    }
+
+    fetchBlogs();
   }, []);
 
   return (
@@ -90,38 +70,81 @@ export default function BlogsPage() {
         </p>
       </section>
 
+      {/* Search Bar */}
+      <div className="max-w-2xl mx-auto mb-8">
+        <div className="relative">
+          <input
+            type="text"
+            placeholder="Search articles..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="w-full px-6 py-3 rounded-full bg-[#1e1e1e] text-white border border-[#333] focus:border-blue-500 focus:outline-none transition-all duration-200"
+          />
+          <svg
+            className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <circle cx="11" cy="11" r="8" />
+            <line x1="21" y1="21" x2="16.65" y2="16.65" />
+          </svg>
+        </div>
+      </div>
+
       {/* Category Filter */}
       <div className="flex flex-wrap justify-center gap-4 mb-14">
-        {["All", "AI", "Next.js", "Cybersecurity"].map((cat, idx) => (
-          <button
-            key={idx}
-            onClick={() => setSelectedCategory(cat)}
-            className={`px-5 py-2 rounded-full text-sm font-medium border ${
-              cat === selectedCategory
-                ? "bg-blue-700 text-white shadow-md"
-                : "bg-[#1e1e1e] text-gray-300 hover:bg-[#2c2c2c]"
-            } transition-all duration-200`}
-          >
-            {cat}
-          </button>
-        ))}
+        {["All", "Codeindu", "AI", "DevOps", "Cybersecurity"].map(
+          (cat, idx) => (
+            <button
+              key={idx}
+              onClick={() => setSelectedCategory(cat)}
+              className={`px-5 py-2 rounded-full text-sm font-medium border ${
+                cat === selectedCategory
+                  ? "bg-blue-700 text-white shadow-md"
+                  : "bg-[#1e1e1e] text-gray-300 hover:bg-[#2c2c2c]"
+              } transition-all duration-200`}
+            >
+              {cat}
+            </button>
+          )
+        )}
       </div>
 
       {/* Filtered Blogs */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        {dummyBlogs
-          .filter((blog) =>
-            selectedCategory === "All"
-              ? true
-              : blog.title.includes(selectedCategory)
-          )
+        {blogs
+          .filter((blog) => {
+            const matchesCategory =
+              selectedCategory === "All"
+                ? true
+                : blog.category
+                    .toLowerCase()
+                    .includes(selectedCategory.toLowerCase()) ||
+                  blog.title
+                    .toLowerCase()
+                    .includes(selectedCategory.toLowerCase());
+
+            const matchesSearch =
+              searchQuery === "" ||
+              blog.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+              blog.excerpt.toLowerCase().includes(searchQuery.toLowerCase()) ||
+              blog.author.toLowerCase().includes(searchQuery.toLowerCase());
+
+            return matchesCategory && matchesSearch;
+          })
           .map(
             ({
               id,
               slug,
               title,
               excerpt,
-              publishedAt,
+              created_at,
               author,
               views,
               image,
@@ -146,7 +169,7 @@ export default function BlogsPage() {
                   {excerpt}
                 </p>
                 <div className="text-gray-500 text-xs flex justify-between">
-                  <span>{new Date(publishedAt).toLocaleDateString()}</span>
+                  <span>{new Date(created_at).toLocaleDateString()}</span>
                   <span>{views} Views</span>
                 </div>
               </Link>
@@ -154,17 +177,17 @@ export default function BlogsPage() {
           )}
       </div>
 
-      {/* Pagination */}
+      {/* Pagination - optional, static for now */}
       <div className="mt-16 flex justify-center gap-2">
         {Array.from(
-          { length: Math.ceil(dummyBlogs.length / 8) },
+          { length: Math.ceil(blogs.length / 8) },
           (_, i) => i + 1
         ).map((p) => (
           <button
             key={p}
-            onClick={() => console.log(`Navigating to page ${p}`)} // Add functionality for page navigation
+            onClick={() => console.log(`Navigating to page ${p}`)}
             className={`px-4 py-2 rounded-full text-sm transition ${
-              p === 1 // Assume page 1 is active by default
+              p === 1
                 ? "bg-blue-600 text-white"
                 : "bg-[#1a1a1a] text-gray-400 hover:bg-[#2a2a2a]"
             }`}
@@ -185,7 +208,6 @@ export default function BlogsPage() {
           data-full-width-responsive="true"
         />
       </div>
-      {/* Google ads */}
       <div className="bg-black mb-5">
         <AdBanner
           dataAdFormat="auto"

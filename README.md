@@ -32,9 +32,5 @@ Welcome to CodeIndu's frontend repository! This project is built using [Next.js]
 
 We welcome contributions! Please follow our [contribution guidelines](CONTRIBUTING.md) to get started.
 
-## License
-
-This project is licensed under the [MIT License](LICENSE).
-
 ---
 Happy coding with CodeIndu!

@@ -1,130 +1,71 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Link from "next/link";
 import Image from "next/image";
 import AdBanner from "@/components/adsense/AdBanner";
 
-const blog = {
-  title: "🛡️ We're Hiring: Ethical Hackers (Hybrid | Paid | Skill-Based Role)",
-  author: "Vikki Verma",
-  publishedAt: "2025-06-4",
-  views: "500 +",
-  content: `
-Join the Cyber Defense Revolution 🚨
-MENDSEC INNOVATIONS PRIVATE LIMITED, a government-registered cybersecurity firm based in Gomti Nagar, Lucknow (UP), is actively looking for skilled ethical hackers to join our growing internal Red Team Force.
-
-We are offering paid hybrid opportunities — both full-time and part-time — based on your skills, tool expertise, and real-world offensive security capabilities.
-
-🔍 Who We're Looking For:
-Deep understanding of ethical hacking, exploit development, and CVEs
-
-Hands-on experience with tools like Burp Suite, Metasploit, Nmap, Wireshark, etc.
-
-Exposure to web application, network, cloud, or API penetration testing
-
-🧠 Why Join MendSec?
-💰 Fixed, skill-based pay structure
-
-🔐 Work under NDAs in a professional white-hat setup
-
-🔭 Long-term cybersecurity research opportunities
-
-✅ Direct work with a registered cybersecurity firm
-
-📬 How to Apply:
-Interested candidates can send their CV or portfolio, along with their preferred working mode (Full-time / Part-time), to:
-
-📧 vikki.verma@mendsec.com
-📱 WhatsApp: +91 7380365295
-
-Let's Defend the Digital Frontier — Legally and Intelligently.
-🧠 Serious professionals only. White-hat ethics mandatory. All applicants are subject to NDA and background verification.
-
-
-Poster: MENDSEC Hiring Drive 20251
-
-Google forms:
-
-Link:- https://forms.gle/ZQCRXhh7igLcfM8t6 
-
-`,
-  image: "/images/blogs/blogs1.jpeg",
-};
-
-const initialComments = [
-  {
-    id: 1,
-    name: "John Doe",
-    comment: "Thanks you.",
-  },
-  { id: 2, name: "Jane Smith", comment: "Thanks for the insightful write-up!" },
-];
-
-const latestBlogs = [
-  {
-    id: "2",
-    slug: "nextjs-13-best-practices",
-    title: "Next.js 13: Best Practices",
-    author: "Leslie Alexander",
-    image: "/blog2.jpg",
-  },
-  {
-    id: "3",
-    slug: "cybersecurity-prediction",
-    title: "Predictive Cybersecurity",
-    author: "Courtney Henry",
-    image: "/blog3.jpg",
-  },
-];
-
-declare global {
-  interface Window {
-    adsbygoogle: unknown[];
-  }
+interface Blog {
+  id: number;
+  title: string;
+  author: string;
+  slug: string;
+  content: string;
+  image: string;
+  views: number;
+  created_at: string;
+  comments: { id: number; name: string; comment: string }[];
 }
 
-function loadAdSense() {
-  if (window.adsbygoogle) return;
-  const script = document.createElement("script");
-  script.async = true;
-  script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
-  script.setAttribute("data-ad-client", "ca-pub-2797234004548975");
-  document.head.appendChild(script);
-  window.adsbygoogle = window.adsbygoogle || [];
-  window.adsbygoogle.push({});
+interface Comment {
+  id: number;
+  name: string;
+  comment: string;
 }
-{
-  /* Google ads */
-}
-<div className="bg-black mb-5">
-  <AdBanner
-    dataAdFormat="auto"
-    dataFullWidthResponsive={true}
-    dataAdSlot="6247561145"
-  />
-</div>;
 
 export default function BlogDetailPage() {
-  const [comments, setComments] = useState(initialComments);
+  const [blog, setBlog] = useState<Blog | null>(null);
   const [formData, setFormData] = useState({ name: "", comment: "" });
+  const [comments, setComments] = useState<Comment[]>([]);
 
   useEffect(() => {
-    loadAdSense();
+    fetch("https://codeindu-api-ju0w.onrender.com/api/blogs/2/")
+      .then((res) => res.json())
+      .then((data) => {
+        setBlog(data);
+        setComments(Array.isArray(data.comments) ? data.comments : []);
+      })
+      .catch((error) => console.error("Error fetching blog:", error));
   }, []);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.name || !formData.comment) return;
 
-    const newComment = {
-      id: comments.length + 1,
-      name: formData.name,
-      comment: formData.comment,
-    };
-    setComments([newComment, ...comments]);
-    setFormData({ name: "", comment: "" });
+    try {
+      const res = await fetch(
+        "https://codeindu-api-ju0w.onrender.com/api/comments/",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            blog: blog?.id,
+            name: formData.name,
+            comment: formData.comment,
+          }),
+        }
+      );
+
+      if (!res.ok) throw new Error("Failed to post comment");
+
+      const newComment = await res.json();
+      setComments([newComment, ...comments]);
+      setFormData({ name: "", comment: "" });
+    } catch (error) {
+      console.error(error);
+    }
   };
+
+  if (!blog) return <p className="text-white text-center">Loading...</p>;
 
   return (
     <div className="bg-[#0a0a0a] text-white px-4 py-10 mx-auto">
@@ -141,12 +82,13 @@ export default function BlogDetailPage() {
           <h1 className="text-4xl font-bold mb-4">{blog.title}</h1>
           <div className="text-sm text-gray-400 mb-6 flex gap-4">
             <span>By {blog.author}</span>
-            <span>{new Date(blog.publishedAt).toLocaleDateString()}</span>
+            <span>{new Date(blog.created_at).toLocaleDateString()}</span>
             <span>{blog.views} Views</span>
           </div>
-          <p className="text-lg leading-relaxed text-gray-300 whitespace-pre-line">
-            {blog.content}
-          </p>
+          <div
+            className="text-lg leading-relaxed text-gray-300"
+            dangerouslySetInnerHTML={{ __html: blog.content }}
+          />
 
           {/* Google Ad */}
           <div className="my-12">
@@ -157,7 +99,7 @@ export default function BlogDetailPage() {
               data-ad-slot="6247561145"
               data-ad-format="auto"
               data-full-width-responsive="true"
-            />
+            ></ins>
           </div>
 
           {/* Google ads */}
@@ -173,12 +115,16 @@ export default function BlogDetailPage() {
           <div className="mt-10">
             <h2 className="text-2xl font-semibold mb-4">All Comments</h2>
             <div className="space-y-6">
-              {comments.map((c) => (
-                <div key={c.id} className="bg-[#1a1a1a] p-4 rounded-xl">
-                  <p className="font-semibold text-blue-400">{c.name}</p>
-                  <p className="text-gray-300">{c.comment}</p>
-                </div>
-              ))}
+              {comments.length > 0 ? (
+                comments.map((c) => (
+                  <div key={c.id} className="bg-[#1a1a1a] p-4 rounded-xl">
+                    <p className="font-semibold text-blue-400">{c.name}</p>
+                    <p className="text-gray-300">{c.comment}</p>
+                  </div>
+                ))
+              ) : (
+                <p>No comments yet.</p>
+              )}
             </div>
           </div>
 
@@ -222,31 +168,8 @@ export default function BlogDetailPage() {
           <h3 className="text-xl font-bold mb-6 border-b border-gray-600 pb-2">
             Latest Blogs
           </h3>
-          <div className="space-y-6">
-            {latestBlogs.map(({ id, slug, title, author, image }) => (
-              <Link
-                key={id}
-                href={`/blogs/${slug}`}
-                className="block bg-[#1a1a1a] hover:bg-[#222] p-4 rounded-xl transition"
-              >
-                <div className="flex gap-4">
-                  <Image
-                    width={50}
-                    height={50}
-                    src={image}
-                    alt={title}
-                    className="w-20 h-20 rounded-lg object-cover"
-                  />
-                  <div>
-                    <p className="text-sm text-blue-400">{author}</p>
-                    <h4 className="text-md font-semibold">{title}</h4>
-                  </div>
-                </div>
-              </Link>
-            ))}
-          </div>
-          {/* Google ads */}
-          <div className="bg-black mb-5">
+          <p className="text-gray-400">Coming soon...</p>
+          <div className="bg-black mb-5 mt-6">
             <AdBanner
               dataAdFormat="auto"
               dataFullWidthResponsive={true}
