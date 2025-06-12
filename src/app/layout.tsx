@@ -24,31 +24,23 @@ const geistMono = Geist_Mono({
 //  SEO Metadata
 export const metadata: Metadata = {
   metadataBase: new URL("https://codeindu.com"),
-  title: "CodeIndu - Code Innovative Network for Digital Upliftment",
+  title: "CodeIndu - Affordable IT Consulting & Software Development Services",
   description:
-    " **CodeIndu** is your premier destination for tailored digital solutions, specializing in custom software development, mobile app creation, and AI-based tools. Serving startups and enterprises alike, CodeIndu engineers possibilities that align with your business vision. Benefit from a trusted, India-based team dedicated to delivering cost-effective, scalable solutions on time. With expertise spanning healthcare, education, retail, and logistics, CodeIndu transforms ideas into high-performance websites and SaaS tools. Experience personalized development that prioritizes your needs and ensures satisfaction. Join CodeIndu to build innovative solutions that elevate your business to new heights. ",
+    "Codeindu offers affordable and expert IT consulting services, custom software development, AI solutions, and digital transformation for startups and enterprises in India and globally. Partner with us for scalable, on-time, and budget-friendly tech solutions.",
   keywords: [
-    "CodeIndu",
+    "IT consulting services",
+    "affordable IT consultancy",
     "custom software development",
-    "business website development",
-    "mobile app for business",
-    "ai solutions for business",
-    "api integration services",
-    "real-time analytics dashboards",
-    "bilingual development services",
-    "logistics tracking systems",
-    "healthcare software solutions",
-    "saas tools development",
-    "startup mvp development",
-    "AI software development",
-    "Custom web development",
-    "Tech consultancy India",
-    "SaaS tools",
-    "Digital transformation",
-    "Full stack development",
-    "Next.js agency",
-    "Django API development",
-    "Startup software partner",
+    "digital transformation agency",
+    "AI software solutions",
+    "IT services for startups",
+    "budget software company",
+    "CodeIndu IT consulting India",
+    "top IT consultancy 2025",
+    "trusted software agency India",
+    "MVP app development",
+    "SaaS product developers",
+    "enterprise tech partner",
   ],
   creator: "CodeIndu Team",
   authors: [
@@ -58,17 +50,17 @@ export const metadata: Metadata = {
     },
   ],
   openGraph: {
-    title: "CodeIndu - AI-Powered Software Development & Tech Solutions",
+    title: "CodeIndu - Trusted IT Consulting & Software Solutions",
     description:
-      "CodeIndu builds high-impact software, tools, and AI-based systems to help businesses scale and innovate faster. India's trusted digital tech partner.",
+      "Get cost-effective, scalable IT consultancy and development with CodeIndu - India's trusted partner for software, AI, and digital innovation.",
     url: "https://codeindu.com",
-    siteName: "CodeIndu",
+    siteName: "Codeindu",
     images: [
       {
-        url: "https://codeindu.com/logo.png",
+        url: "https://codeindu.com/logo/logo.png",
         width: 1200,
         height: 630,
-        alt: "CodeIndu logo",
+        alt: "Codeindu logo",
       },
     ],
     locale: "en_US",
@@ -78,9 +70,10 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@codeindu",
     creator: "@codeindu",
-    title: "CodeIndu - Future of Software & SaaS in India",
+    title:
+      "CodeIndu - Affordable IT & Software Services for Growing Businesses",
     description:
-      "Empowering startups and enterprises with smart automation, AI software, and cybersecurity tools.",
+      "Partner with CodeIndu for custom software, web apps, AI automation, and IT consulting - all within your budget.",
     images: ["https://codeindu.com/twitter-card.jpg"],
   },
   icons: {
@@ -92,7 +85,7 @@ export const metadata: Metadata = {
     canonical: "https://codeindu.com",
     languages: {
       "en-IN": "/",
-      "hi-IN": "/hi", // prepare for multilingual
+      "hi-IN": "/hi",
     },
   },
 };
@@ -122,7 +115,7 @@ export default function RootLayout({
         </Script>
 
         {/* Preload logo/image assets */}
-        <link rel="preload" as="image" href="/logo.png" />
+        <link rel="preload" as="image" href="/logo/logo.png" />
         <link rel="preload" as="image" href="/og-banner.jpg" />
 
         {/* Google ads */}

@@ -45,12 +45,12 @@ export default function Navbar() {
           <Image
             src="/logo/logo.svg"
             alt="CodeIndu Logo"
-            width={80} // higher source resolution for crispness
-            height={80}
+            width={50} // higher source resolution for crispness
+            height={50}
             priority
             quality={100}
             style={{
-              maxHeight: "250px", // constrain visual height inside navbar (adjust if needed)
+              maxHeight: "20px", // constrain visual height inside navbar (adjust if needed)
               width: "auto",
               height: "auto",
             }}
@@ -92,7 +92,7 @@ export default function Navbar() {
           </Link>
 
           <Link
-            href="https://www.youtube.com/@codeindu"
+            href="https://youtube.com/@codeindu"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -104,14 +104,19 @@ export default function Navbar() {
               <Youtube size={18} />
             </Button>
           </Link>
-
-          <Button
-            variant="ghost"
-            size="icon"
-            className="text-gray-300 hover:text-white hover:bg-[#0066ff]/20 cursor-pointer"
+          <Link
+            href="https://x.com/codeindu"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            <Twitter size={18} />
-          </Button>
+            <Button
+              variant="ghost"
+              size="icon"
+              className="text-gray-300 hover:text-white hover:bg-[#0066ff]/20 cursor-pointer"
+            >
+              <Twitter size={18} />
+            </Button>
+          </Link>
 
           <Link href="/login">
             <Button className="bg-gradient-to-r from-[#0066ff] to-[#cc00ff] text-white hover:opacity-90 cursor-pointer">

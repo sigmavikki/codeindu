@@ -32,7 +32,7 @@ export default function Footer() {
                   <Image
                     src="/logo/logo.svg"
                     alt="CodeIndu Logo"
-                    width={150} // higher source resolution for crispness
+                    width={100} // higher source resolution for crispness
                     height={80}
                     priority
                     quality={100}
@@ -43,11 +43,12 @@ export default function Footer() {
                     }}
                   />
                 </Link>
-
-                {/* <p className="text-gray-400 text-sm mb-6">
+                <br />
+                <br />
+                <p className="text-gray-400 text-sm mb-6">
                   A tech content platform for coders, ethical hackers, AI
                   enthusiasts, and gadget lovers.
-                </p> */}
+                </p>
 
                 <div className="flex gap-3">
                   <Link
@@ -67,7 +68,7 @@ export default function Footer() {
                     <Github size={16} />
                   </Link>
                   <Link
-                    href="x.com"
+                    href="https://x.com/codeindu"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-8 h-8 rounded-full bg-[#0066ff]/10 flex items-center justify-center text-gray-400 hover:text-white hover:bg-[#0066ff]/20"

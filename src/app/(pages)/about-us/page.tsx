@@ -42,7 +42,7 @@ export default function AboutUsPage() {
             <Image
               width={400}
               height={350}
-              src="/images/about-us.jpg"
+              src="/images/about-us/about-us.jpeg"
               alt="Who We Are"
               className="rounded-xl shadow-xl opacity-90"
             />
@@ -215,7 +215,7 @@ export default function AboutUsPage() {
             Let&apos;s build software that transforms your business.
           </p>
           <a
-            href="/contact"
+            href="/contact-us"
             className="inline-block bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white py-3 px-8 rounded-full shadow-lg transition"
           >
             Get in Touch
