@@ -1,187 +1,14 @@
 "use client";
-
 import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
 import { motion } from "framer-motion";
-import {
-  FaCode,
-  FaLaptopCode,
-  FaCogs,
-  FaProjectDiagram,
-  FaRobot,
-  FaMobileAlt,
-  FaClock,
-  FaUserCheck,
-  FaUsers,
-  FaMoneyBillWave,
-  FaHeartbeat,
-  FaGraduationCap,
-  FaShoppingCart,
-  FaTruckMoving,
-  FaRocket,
-  FaGlobeAsia,
-  FaClipboardList,
-  FaDraftingCompass,
-  FaVial,
-  FaHandshake,
-  FaWhatsapp,
-  FaEnvelope,
-} from "react-icons/fa";
+import { FaWhatsapp, FaEnvelope } from "react-icons/fa";
+import { reasons, industries, steps } from "@/api/homepageapi";
+import { services } from "@/api/servicesapi";
+import Link from "next/link";
 
 export default function HomePage() {
-  // Services
-  const services = [
-    {
-      icon: <FaCode className="text-blue-500 text-3xl" />,
-      title: "Custom Software Development",
-      desc: "Tailor-made software solutions designed to match your business logic.",
-      descHindi:
-        "100% custom software jo aapke business logic ke hisaab se banaya jaata hai.",
-    },
-    {
-      icon: <FaLaptopCode className="text-green-500 text-3xl" />,
-      title: "Business Website Development",
-      desc: "Modern, responsive, and conversion-driven websites for startups & enterprises.",
-      descHindi: "High-performance website jo trust aur traffic dono laaye.",
-    },
-    {
-      icon: <FaProjectDiagram className="text-purple-500 text-3xl" />,
-      title: "SaaS Tools & Dashboards",
-      desc: "Productized tools and dashboards with real-time analytics.",
-      descHindi:
-        "SaaS tools aur dashboards jo client aur admin dono ke liye useful hote hain.",
-    },
-    {
-      icon: <FaCogs className="text-yellow-500 text-3xl" />,
-      title: "Automation & Integration",
-      desc: "Connect your systems with automated workflows using APIs.",
-      descHindi:
-        "Manual kaam hataayein — APIs aur automation workflows ke saath.",
-    },
-    {
-      icon: <FaRobot className="text-red-500 text-3xl" />,
-      title: "AI-based Tools (Future Ready)",
-      desc: "AI integrations like chatbots, recommendations, and process automation.",
-      descHindi:
-        "Chatbot, prediction system jaise AI tools jo future-ready solutions hain.",
-    },
-    {
-      icon: <FaMobileAlt className="text-indigo-500 text-3xl" />,
-      title: "Mobile App Development",
-      desc: "Cross-platform Android & iOS apps tailored to your business.",
-      descHindi: "Android/iOS apps – fast, responsive aur brand-oriented.",
-    },
-  ];
-  // Why Choise us
-  const reasons = [
-    {
-      icon: <FaUserCheck className="text-blue-500 text-3xl" />,
-      title: "Personalized Development",
-      desc: "We build exactly what you need – tailored to your vision and logic.",
-      descHindi:
-        "Har project aapke business ke hisaab se customize kiya jaata hai.",
-    },
-    {
-      icon: <FaUsers className="text-green-500 text-3xl" />,
-      title: "India-Based Trusted Team",
-      desc: "Reliable, skilled professionals you can communicate with easily.",
-      descHindi:
-        "Bharat ka trusted aur responsive development team – no outsourcing mess.",
-    },
-    {
-      icon: <FaMoneyBillWave className="text-yellow-500 text-3xl" />,
-      title: "Cost-effective & Scalable",
-      desc: "Affordable pricing with future-proof scalability.",
-      descHindi:
-        "Kam cost mein aapko milta hai scalable aur high-quality solution.",
-    },
-    {
-      icon: <FaClock className="text-red-500 text-3xl" />,
-      title: "Timely Delivery & Satisfaction",
-      desc: "We deliver on time with a 100% satisfaction mindset.",
-      descHindi:
-        "Time par delivery aur complete transparency ke saath client-first focus.",
-    },
-  ];
-  // Indures we serve
-  const industries = [
-    {
-      icon: <FaHeartbeat className="text-pink-500 text-3xl" />,
-      title: "Healthcare",
-      desc: "Secure & scalable healthcare tech for hospitals and clinics.",
-      descHindi: "Hospital aur medical sector ke liye digital solutions.",
-    },
-    {
-      icon: <FaGraduationCap className="text-indigo-500 text-3xl" />,
-      title: "Education",
-      desc: "EdTech tools for institutes, online courses, and training platforms.",
-      descHindi:
-        "Online classes, LMS aur institutes ke liye customized portals.",
-    },
-    {
-      icon: <FaShoppingCart className="text-yellow-500 text-3xl" />,
-      title: "Retail",
-      desc: "E-commerce platforms, POS, and inventory systems.",
-      descHindi: "E-commerce websites, billing aur inventory ke liye apps.",
-    },
-    {
-      icon: <FaTruckMoving className="text-green-500 text-3xl" />,
-      title: "Logistics",
-      desc: "Real-time tracking, dispatch & automation systems.",
-      descHindi:
-        "Transport aur delivery ke liye automation & tracking software.",
-    },
-    {
-      icon: <FaRocket className="text-red-500 text-3xl" />,
-      title: "Startups",
-      desc: "Tech architecture & MVPs for scaling new-age businesses.",
-      descHindi: "Naye startups ke liye fast MVPs aur scalable tools.",
-    },
-    {
-      icon: <FaGlobeAsia className="text-blue-500 text-3xl" />,
-      title: "More Domains",
-      desc: "Custom solutions for various industries globally.",
-      descHindi: "Multiple sectors ke liye global tech solutions.",
-    },
-  ];
-  // Our Process
-  const steps = [
-    {
-      icon: <FaClipboardList className="text-blue-500 text-3xl" />,
-      title: "1. Requirement Gathering",
-      desc: "We understand your needs, goals, and challenges.",
-      descHindi: "Sabse pehle hum aapki requirements ko clearly samajhte hain.",
-    },
-    {
-      icon: <FaDraftingCompass className="text-yellow-400 text-3xl" />,
-      title: "2. Planning & Design",
-      desc: "We design UI/UX and architect the system for performance and scalability.",
-      descHindi:
-        "Project ka blueprint aur design banaya jaata hai – visually aur technically.",
-    },
-    {
-      icon: <FaCode className="text-green-500 text-3xl" />,
-      title: "3. Development",
-      desc: "We write clean, scalable, and optimized code – frontend to backend.",
-      descHindi:
-        "Software ko code kiya jaata hai – har feature carefully develop hota hai.",
-    },
-    {
-      icon: <FaVial className="text-red-500 text-3xl" />,
-      title: "4. Testing & Delivery",
-      desc: "We rigorously test before delivering the final product.",
-      descHindi:
-        "Delivery se pehle sab kuch test kiya jaata hai – quality guarantee ke saath.",
-    },
-    {
-      icon: <FaHandshake className="text-purple-500 text-3xl" />,
-      title: "5. Ongoing Support",
-      desc: "We stay with you – updates, maintenance, and future upgrades.",
-      descHindi:
-        "Baad mein bhi support milta hai – technical issues aur updates ke liye.",
-    },
-  ];
   // Contact Forms
   const [form, setForm] = useState({ name: "", email: "", idea: "" });
 
@@ -194,7 +21,7 @@ export default function HomePage() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // 👉 Integrate with backend / email service here
-    alert("Form submitted! We’ll contact you shortly.");
+    alert("Form submitted! We'll contact you shortly.");
   };
 
   const containerRef = useRef<HTMLDivElement>(null);
@@ -220,7 +47,7 @@ export default function HomePage() {
 
   return (
     <main className="bg-[#0a0a0a] text-white">
-      {/* Hero Section 1 */}
+      {/* Section 1:- Hero */}
       <section
         ref={containerRef}
         className="relative min-h-screen flex items-center justify-center pt-16 pb-10 overflow-hidden"
@@ -256,7 +83,7 @@ export default function HomePage() {
         <div className="container mx-auto px-4 flex flex-col items-center text-center z-10">
           <div className="glitch-container relative mb-4 inline-flex">
             <div className="text-sm font-mono uppercase tracking-wider text-[#e5f0ff] py-1 px-3 rounded-full bg-[#0066ff]/10 border border-[#0066ff]/20 mb-4">
-              CodeIndu - Code Innovative Network for Digital Upliftment.
+              Codeindu - Code Innovative Network for Digital Upliftment.
             </div>
           </div>
 
@@ -268,9 +95,10 @@ export default function HomePage() {
           </h1>
 
           <p className="text-lg md:text-xl text-gray-400 max-w-3xl mb-8">
-            At CodeIndu, we don’t just code — we engineer possibilities. From
-            startups to enterprises, we build tailor-made solutions in web,
-            mobile, and AI that align with your business vision.
+            At CodeIndu, we turn your business vision into reality with
+            innovative IT solutions. As a premier IT consultancy, we focus on
+            creating custom web, mobile, and AI-powered applications designed to
+            meet the specific needs of startups and enterprises.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center gap-4 mb-12">
@@ -326,11 +154,11 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-      {/* Sections 2:-  */}
+      {/* Sections 2:- Services */}
       <section id="services" className="py-16 bg-[#0e0e0e] text-white">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">
-            Our Services{" "}
+            Our Services
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -341,16 +169,41 @@ export default function HomePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-[#1a1a1a] p-6 rounded-2xl hover:shadow-lg hover:scale-105 transition-all duration-300"
+                className="bg-[#1a1a1a] p-6 rounded-2xl hover:shadow-lg hover:scale-105 transition-all duration-300 flex flex-col justify-between"
               >
-                <div className="mb-4">{service.icon}</div>
-                <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
-                <p className="text-sm text-gray-300">{service.desc}</p>
-                <p className="text-sm text-gray-400 italic mt-2">
-                  {service.descHindi}
-                </p>
+                <div>
+                  <div className="mb-4 text-3xl text-primary">
+                    {service.icon}
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2">
+                    {service.title}
+                  </h3>
+                  <p className="text-sm text-gray-300 mb-4">{service.desc}</p>
+                </div>
+
+                <div className="mt-auto flex gap-3">
+                  <Link href="/contact">
+                    <button className="bg-blue-600 hover:bg-blue-700 text-white text-sm px-4 py-2 rounded-lg cursor-pointer ">
+                      Contact Us
+                    </button>
+                  </Link>
+                  <Link href={`/services/${service.slug}`}>
+                    <button className="bg-gray-700 hover:bg-gray-600 text-white text-sm px-4 py-2 rounded-lg cursor-pointer ">
+                      Explore
+                    </button>
+                  </Link>
+                </div>
               </motion.div>
             ))}
+          </div>
+
+          {/* View All Button at Bottom */}
+          <div className="mt-12 text-center">
+            <Link href="/services">
+              <button className="bg-white text-black font-medium px-6 py-3 rounded-xl hover:bg-gray-200 transition cursor-pointer ">
+                View All Services
+              </button>
+            </Link>
           </div>
         </div>
       </section>
@@ -374,9 +227,6 @@ export default function HomePage() {
                 <div className="mb-4">{item.icon}</div>
                 <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
                 <p className="text-sm text-gray-300">{item.desc}</p>
-                <p className="text-sm text-gray-400 italic mt-2">
-                  {item.descHindi}
-                </p>
               </motion.div>
             ))}
           </div>
@@ -402,9 +252,6 @@ export default function HomePage() {
                 <div className="mb-4">{industry.icon}</div>
                 <h3 className="text-xl font-semibold mb-2">{industry.title}</h3>
                 <p className="text-sm text-gray-300">{industry.desc}</p>
-                <p className="text-sm text-gray-400 italic mt-2">
-                  {industry.descHindi}
-                </p>
               </motion.div>
             ))}
           </div>
@@ -431,9 +278,6 @@ export default function HomePage() {
                 <div className="mb-4">{step.icon}</div>
                 <h3 className="text-xl font-semibold mb-2">{step.title}</h3>
                 <p className="text-sm text-gray-300">{step.desc}</p>
-                <p className="text-sm text-gray-400 italic mt-2">
-                  {step.descHindi}
-                </p>
               </motion.div>
             ))}
           </div>

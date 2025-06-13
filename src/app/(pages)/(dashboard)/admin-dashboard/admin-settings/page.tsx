@@ -14,17 +14,25 @@ export default function AdminSettingsPage() {
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
-    const { name, type, checked, value } = e.target;
+    const target = e.target;
+    const { name, type, value } = target;
+
     setSettings((prev) => ({
       ...prev,
-      [name]: type === "checkbox" ? checked : value,
+      [name]:
+        type === "checkbox"
+          ? (target as HTMLInputElement).checked
+          : type === "number"
+          ? Number(value)
+          : value,
     }));
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     alert("Settings saved!");
-    // You could POST to an API here
+    // Example: POST to an API here
+    // fetch("/api/admin/settings", { method: "POST", body: JSON.stringify(settings) })
   };
 
   return (

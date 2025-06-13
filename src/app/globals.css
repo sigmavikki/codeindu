@@ -41,6 +41,9 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
 }
+*{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
 
 body {
   background: var(--background);

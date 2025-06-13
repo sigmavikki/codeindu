@@ -1,64 +1,17 @@
 "use client";
 
 import { motion } from "framer-motion";
-import {
-  FaCode,
-  FaLaptopCode,
-  FaCogs,
-  FaProjectDiagram,
-  FaRobot,
-  FaMobileAlt,
-} from "react-icons/fa";
+import { services } from "@/api/servicesapi";
+import Link from "next/link";
+
 
 export default function ServicesPage() {
-  // Services
-  const services = [
-    {
-      icon: <FaCode className="text-blue-500 text-3xl" />,
-      title: "Custom Software Development",
-      desc: "Tailor-made software solutions designed to match your business logic.",
-      descHindi:
-        "100% custom software jo aapke business logic ke hisaab se banaya jaata hai.",
-    },
-    {
-      icon: <FaLaptopCode className="text-green-500 text-3xl" />,
-      title: "Business Website Development",
-      desc: "Modern, responsive, and conversion-driven websites for startups & enterprises.",
-      descHindi: "High-performance website jo trust aur traffic dono laaye.",
-    },
-    {
-      icon: <FaProjectDiagram className="text-purple-500 text-3xl" />,
-      title: "SaaS Tools & Dashboards",
-      desc: "Productized tools and dashboards with real-time analytics.",
-      descHindi:
-        "SaaS tools aur dashboards jo client aur admin dono ke liye useful hote hain.",
-    },
-    {
-      icon: <FaCogs className="text-yellow-500 text-3xl" />,
-      title: "Automation & Integration",
-      desc: "Connect your systems with automated workflows using APIs.",
-      descHindi:
-        "Manual kaam hataayein — APIs aur automation workflows ke saath.",
-    },
-    {
-      icon: <FaRobot className="text-red-500 text-3xl" />,
-      title: "AI-based Tools (Future Ready)",
-      desc: "AI integrations like chatbots, recommendations, and process automation.",
-      descHindi:
-        "Chatbot, prediction system jaise AI tools jo future-ready solutions hain.",
-    },
-    {
-      icon: <FaMobileAlt className="text-indigo-500 text-3xl" />,
-      title: "Mobile App Development",
-      desc: "Cross-platform Android & iOS apps tailored to your business.",
-      descHindi: "Android/iOS apps – fast, responsive aur brand-oriented.",
-    },
-  ];
+  
   return (
     <section id="services" className="py-16 bg-[#0e0e0e] text-white">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">
-          Our Services{" "}
+          Our Services
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -69,16 +22,37 @@ export default function ServicesPage() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-[#1a1a1a] p-6 rounded-2xl hover:shadow-lg hover:scale-105 transition-all duration-300"
+              className="bg-[#1a1a1a] p-6 rounded-2xl hover:shadow-lg hover:scale-105 transition-all duration-300 flex flex-col justify-between"
             >
-              <div className="mb-4">{service.icon}</div>
-              <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
-              <p className="text-sm text-gray-300">{service.desc}</p>
-              <p className="text-sm text-gray-400 italic mt-2">
-                {service.descHindi}
-              </p>
+              <div>
+                <div className="mb-4 text-3xl text-primary">{service.icon}</div>
+                <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
+                <p className="text-sm text-gray-300 mb-4">{service.desc}</p>
+              </div>
+
+              <div className="mt-auto flex gap-3">
+                <Link href="/contact">
+                  <button className="bg-blue-600 hover:bg-blue-700 text-white text-sm px-4 py-2 rounded-lg cursor-pointer ">
+                    Contact Us
+                  </button>
+                </Link>
+                <Link href={`/services/${service.slug}`}>
+                  <button className="bg-gray-700 hover:bg-gray-600 cursor-pointer text-white text-sm px-4 py-2 rounded-lg">
+                    Explore
+                  </button>
+                </Link>
+              </div>
             </motion.div>
           ))}
+        </div>
+
+        {/* View All Button at Bottom */}
+        <div className="mt-12 text-center">
+          <Link href="/services">
+            <button className="bg-white text-black font-medium px-6 py-3 rounded-xl hover:bg-gray-200 transition cursor-pointer">
+              View All Services
+            </button>
+          </Link>
         </div>
       </div>
     </section>
