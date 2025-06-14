@@ -37,22 +37,169 @@ const course = {
     {
       title: "Introduction to HTML5",
       lessons: [
-        { title: "What is HTML?", duration: "10 minutes" },
-        { title: "HTML Document Structure", duration: "15 minutes" },
+        { title: "HTML Overview", duration: "10 minutes" },
+        { title: "Basic HTML Document", duration: "10 minutes" },
+        { title: "HTML Tags & Structure", duration: "15 minutes" },
+        { title: "DOCTYPE Declaration", duration: "5 minutes" },
+      ],
+    },
+    {
+      title: "HTML Tags and Formatting",
+      lessons: [
+        { title: "Heading & Paragraph Tags", duration: "10 minutes" },
+        { title: "Line Breaks & Centering", duration: "10 minutes" },
+        { title: "Horizontal Lines & Formatting", duration: "10 minutes" },
+        { title: "Nonbreaking Spaces", duration: "5 minutes" },
       ],
     },
     {
       title: "HTML Elements and Attributes",
       lessons: [
-        { title: "Text Elements", duration: "20 minutes" },
-        { title: "Links and Images", duration: "15 minutes" },
+        { title: "HTML Tag vs Element", duration: "10 minutes" },
+        { title: "Nested HTML Elements", duration: "10 minutes" },
+        { title: "Core & i18n Attributes", duration: "10 minutes" },
+        { title: "The xml:lang Attribute", duration: "5 minutes" },
       ],
     },
     {
-      title: "Forms and Input Types",
+      title: "Text Formatting & Phrase Tags",
       lessons: [
-        { title: "Creating Forms", duration: "25 minutes" },
-        { title: "Input Types and Validation", duration: "20 minutes" },
+        { title: "Bold, Italic, Underline, Strike", duration: "15 minutes" },
+        { title: "Monospaced, Sup/Subscript", duration: "10 minutes" },
+        { title: "Insert/Delete, Large/Small Text", duration: "10 minutes" },
+        { title: "Emphasized, Marked, Strong Text", duration: "10 minutes" },
+      ],
+    },
+    {
+      title: "Special Tags & Quotes",
+      lessons: [
+        { title: "Abbreviation, Acronym, Direction", duration: "10 minutes" },
+        { title: "Quotations & Citations", duration: "10 minutes" },
+        { title: "Code, Keyboard, Variables", duration: "10 minutes" },
+        { title: "Output & Address Tags", duration: "5 minutes" },
+      ],
+    },
+    {
+      title: "Meta Information & Comments",
+      lessons: [
+        { title: "Adding Meta Tags", duration: "10 minutes" },
+        { title: "Keywords, Description, Author", duration: "10 minutes" },
+        { title: "Revision, Refresh, Redirect", duration: "10 minutes" },
+        { title: "Valid & Invalid Comments", duration: "10 minutes" },
+      ],
+    },
+    {
+      title: "HTML Images",
+      lessons: [
+        { title: "Insert Images & Attributes", duration: "10 minutes" },
+        { title: "Set Size, Border & Alignment", duration: "10 minutes" },
+        { title: "Free Web Graphics", duration: "5 minutes" },
+      ],
+    },
+    {
+      title: "HTML Tables",
+      lessons: [
+        { title: "Table Headings, Padding, Spacing", duration: "10 minutes" },
+        { title: "Colspan, Rowspan, Height, Width", duration: "10 minutes" },
+        { title: "Table Caption & Sections", duration: "10 minutes" },
+        { title: "Nested Tables", duration: "10 minutes" },
+      ],
+    },
+    {
+      title: "HTML Lists",
+      lessons: [
+        { title: "Unordered Lists & Types", duration: "10 minutes" },
+        { title: "Ordered Lists & Attributes", duration: "10 minutes" },
+        { title: "Definition Lists", duration: "10 minutes" },
+      ],
+    },
+    {
+      title: "Text & Image Links",
+      lessons: [
+        { title: "Linking Documents", duration: "10 minutes" },
+        { title: "Target & Base Path", duration: "10 minutes" },
+        { title: "Section Links & Link Colors", duration: "10 minutes" },
+        { title: "Image Links & Maps", duration: "10 minutes" },
+      ],
+    },
+    {
+      title: "Email & Multimedia",
+      lessons: [
+        { title: "HTML Email Links", duration: "5 minutes" },
+        { title: "Default Settings & Downloads", duration: "10 minutes" },
+        { title: "Embedded Audio/Video", duration: "10 minutes" },
+        { title: "Object & Embed Tags", duration: "10 minutes" },
+      ],
+    },
+    {
+      title: "Frames & Iframes",
+      lessons: [
+        { title: "Frames, Attributes, Disadvantages", duration: "10 minutes" },
+        { title: "Named Targets & Browser Support", duration: "10 minutes" },
+        { title: "Iframes & Attributes", duration: "10 minutes" },
+      ],
+    },
+    {
+      title: "HTML Blocks & Backgrounds",
+      lessons: [
+        { title: "Block vs Inline Elements", duration: "10 minutes" },
+        { title: "DIV & SPAN Tags", duration: "10 minutes" },
+        { title: "Background Colors & Images", duration: "10 minutes" },
+      ],
+    },
+    {
+      title: "Colors & Fonts",
+      lessons: [
+        { title: "Color Names, Hex, RGB, Safe Colors", duration: "10 minutes" },
+        { title: "Font Size, Face, Color", duration: "10 minutes" },
+        { title: "Basefont Tag Example", duration: "5 minutes" },
+      ],
+    },
+    {
+      title: "HTML Forms",
+      lessons: [
+        { title: "Form Attributes & Controls", duration: "10 minutes" },
+        { title: "Text & Password Inputs", duration: "10 minutes" },
+        { title: "Textareas, Checkbox, Radio", duration: "10 minutes" },
+        { title: "Select Box, File Uploads", duration: "10 minutes" },
+        { title: "Buttons & Hidden Inputs", duration: "10 minutes" },
+      ],
+    },
+    {
+      title: "HTML Marquee & Header Tags",
+      lessons: [
+        { title: "Marquee Tag & Attributes", duration: "5 minutes" },
+        { title: "HTML Header Tags", duration: "5 minutes" },
+      ],
+    },
+    {
+      title: "HTML Head & Styling",
+      lessons: [
+        { title: "<title>, <meta>, <link>, <style>", duration: "10 minutes" },
+        { title: "External, Internal, Inline Styles", duration: "10 minutes" },
+      ],
+    },
+    {
+      title: "JavaScript in HTML",
+      lessons: [
+        { title: "Script Tags & Placement", duration: "10 minutes" },
+        { title: "Event Handlers & Noscript", duration: "10 minutes" },
+      ],
+    },
+    {
+      title: "HTML Layouts",
+      lessons: [
+        { title: "Layouts using Tables", duration: "10 minutes" },
+        { title: "Multiple Columns & DIV Layouts", duration: "10 minutes" },
+      ],
+    },
+    {
+      title: "Final References and Project",
+      lessons: [
+        { title: "Tag, Attribute, Event References", duration: "10 minutes" },
+        { title: "Fonts, ASCII, Entities", duration: "10 minutes" },
+        { title: "Interview Questions", duration: "15 minutes" },
+        { title: "Final Mini Project", duration: "30 minutes" },
       ],
     },
   ],
@@ -75,20 +222,20 @@ const course = {
         "You can ask questions in the course forum or contact the instructor directly or with Whatsapp Groups.",
     },
   ],
-  testimonials: [
-    {
-      name: "John Doe",
-      feedback:
-        "This course was fantastic! I learned so much about HTML5 and web development. Highly recommend!",
-      rating: 5,
-    },
-    {
-      name: "Jane Smith",
-      feedback:
-        "Great course for beginners! The instructor explained everything clearly and the exercises were very helpful.",
-      rating: 4.5,
-    },
-  ],
+  // testimonials: [
+  //   {
+  //     name: "John Doe",
+  //     feedback:
+  //       "This course was fantastic! I learned so much about HTML5 and web development. Highly recommend!",
+  //     rating: 5,
+  //   },
+  //   {
+  //     name: "Jane Smith",
+  //     feedback:
+  //       "Great course for beginners! The instructor explained everything clearly and the exercises were very helpful.",
+  //     rating: 4.5,
+  //   },
+  // ],
   relatedCourses: [
     {
       id: 2,
@@ -183,21 +330,39 @@ export default function CourseDetailsPage() {
           </ul>
         </div>
 
-        {/* Curriculum */}
+        {/* Curriculum Section with Dropdown */}
         <div>
           <h2 className="text-2xl font-semibold mb-4">Curriculum</h2>
           {course.curriculum.map((section, i) => (
-            <div key={i} className="mb-6">
-              <h3 className="text-lg font-bold text-[#00ccff]">
-                {section.title}
-              </h3>
-              <ul className="pl-4 text-gray-400">
-                {section.lessons.map((lesson, j) => (
-                  <li key={j} className="py-1">
-                    - {lesson.title} ({lesson.duration})
-                  </li>
-                ))}
-              </ul>
+            <div
+              key={i}
+              className="mb-4 border border-white/10 rounded-md overflow-hidden"
+            >
+              <details className="group bg-white/5 p-4 cursor-pointer">
+                <summary className="flex justify-between items-center font-semibold text-[#00ccff] marker:text-transparent">
+                  <span>{section.title}</span>
+                  <svg
+                    className="w-4 h-4 text-[#00ccff] transform transition-transform group-open:rotate-180"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </summary>
+                <ul className="mt-3 pl-4 text-gray-400 list-disc">
+                  {section.lessons.map((lesson, j) => (
+                    <li key={j} className="py-1">
+                      {lesson.title} ({lesson.duration})
+                    </li>
+                  ))}
+                </ul>
+              </details>
             </div>
           ))}
         </div>
@@ -216,7 +381,7 @@ export default function CourseDetailsPage() {
         </div>
 
         {/* Testimonials */}
-        <div>
+        {/* <div>
           <h2 className="text-2xl font-semibold mb-4">What Our Students Say</h2>
           <div className="grid md:grid-cols-2 gap-4">
             {course.testimonials.map((t, i) => (
@@ -233,7 +398,7 @@ export default function CourseDetailsPage() {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
 
         {/* Related Courses */}
         <div>

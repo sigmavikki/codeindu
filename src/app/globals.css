@@ -138,3 +138,17 @@ body {
 .animate-fade-in {
   animation: fade-in 0.7s ease forwards;
 }
+
+
+/* For course drop down */
+details > summary {
+  list-style: none;
+}
+
+details > summary::-webkit-details-marker {
+  display: none;
+}
+
+details[open] summary {
+  font-weight: 600;
+}
