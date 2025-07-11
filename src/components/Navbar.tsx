@@ -23,8 +23,6 @@ export default function Navbar() {
   const navLinks = [
     { href: "/", label: "Home" },
     { href: "/services", label: "Services" },
-    { href: "/induware", label: "InduWare" },
-    { href: "/courses", label: "Course" },
     { href: "/blogs", label: "Blogs" },
     { href: "/about-us", label: "About Us" },
     { href: "/contact-us", label: "Contact Us" },
@@ -44,16 +42,16 @@ export default function Navbar() {
         <Link href="/" className="flex items-center gap-2">
           <Image
             src="/logo/logo.svg"
-            alt="CodeIndu Logo"
-            width={50} // higher source resolution for crispness
-            height={50}
+            alt="mendsec Logo"
+            width={150}
+            height={40}
             priority
             quality={100}
-            style={{
-              maxHeight: "20px", // constrain visual height inside navbar (adjust if needed)
-              width: "auto",
-              height: "auto",
-            }}
+            // style={{
+            //   width: "500px",
+            //   height: "200px",
+            //   objectFit: "contain",
+            // }}
           />
         </Link>
 
@@ -92,7 +90,7 @@ export default function Navbar() {
           </Link>
 
           <Link
-            href="https://youtube.com/@codeindu"
+            href="https://youtube.com/@mendsec"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -105,7 +103,7 @@ export default function Navbar() {
             </Button>
           </Link>
           <Link
-            href="https://x.com/codeindu"
+            href="https://x.com/mendsec"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -164,7 +162,7 @@ export default function Navbar() {
                 <Github size={18} />
               </Button>
               <Link
-                href="https://www.youtube.com/@codeindu"
+                href="https://www.youtube.com/@mendsec"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -186,7 +184,7 @@ export default function Navbar() {
             </div>
 
             <Link
-              href="https://www.youtube.com/@codeindu"
+              href="https://www.youtube.com/@mendsec"
               target="_blank"
               rel="noopener noreferrer"
             >

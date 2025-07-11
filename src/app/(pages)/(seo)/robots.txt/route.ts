@@ -5,7 +5,7 @@ export function GET() {
 User-agent: *
 Allow: /
 
-Sitemap: https://codeindu.com/sitemap.xml
+Sitemap: https://mendsec.com/sitemap.xml
   `.trim();
 
   return new NextResponse(content, {

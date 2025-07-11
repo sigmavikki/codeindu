@@ -1,6 +1,6 @@
-# CodeIndu (Frontend Next.js)
+# Mendsec (Frontend Next.js)
 
-Welcome to CodeIndu's frontend repository! This project is built using [Next.js](https://nextjs.org/), a powerful React framework for building fast and scalable web applications.
+Welcome to Mendsec's frontend repository! This project is built using [Next.js](https://nextjs.org/), a powerful React framework for building fast and scalable web applications.
 
 ## Features
 
@@ -13,8 +13,8 @@ Welcome to CodeIndu's frontend repository! This project is built using [Next.js]
 
 1. **Clone the Repository**:
     ```bash
-    git clone https://github.com/sigmavikki/codeindu.git
-    cd codeindu-frontend
+    git clone https://github.com/dev-vikki/Mendsec.git
+    cd Mendsec-frontend
     ```
 
 2. **Install Dependencies**:
@@ -33,4 +33,4 @@ Welcome to CodeIndu's frontend repository! This project is built using [Next.js]
 We welcome contributions! Please follow our [contribution guidelines](CONTRIBUTING.md) to get started.
 
 ---
-Happy coding with CodeIndu!
+Happy coding with Mendsec!

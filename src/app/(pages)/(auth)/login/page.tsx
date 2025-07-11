@@ -13,7 +13,7 @@ export default function LoginPage() {
         <div className="hidden md:flex flex-col justify-center p-10 bg-gradient-to-br from-purple-800/30 to-indigo-900/20">
           <h2 className="text-4xl font-bold mb-4">Welcome Back</h2>
           <p className="text-gray-300 text-lg">
-            Login to access your Codeindu dashboard and build your future.
+            Login to access your Mendsec dashboard and build your future.
           </p>
         </div>
 

@@ -31,13 +31,13 @@ export default function Footer() {
                 <Link href="/" className="flex items-center gap-2">
                   <Image
                     src="/logo/logo.svg"
-                    alt="CodeIndu Logo"
-                    width={100} // higher source resolution for crispness
+                    alt="mendsec Logo"
+                    width={100} 
                     height={80}
                     priority
                     quality={100}
                     style={{
-                      maxHeight: "150px", // constrain visual height inside navbar (adjust if needed)
+                      maxHeight: "150px", 
                       width: "auto",
                       height: "auto",
                     }}
@@ -52,7 +52,7 @@ export default function Footer() {
 
                 <div className="flex gap-3">
                   <Link
-                    href="https://www.youtube.com/@codeindu"
+                    href="https://www.youtube.com/@mendsec"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-8 h-8 rounded-full bg-[#0066ff]/10 flex items-center justify-center text-gray-400 hover:text-white hover:bg-[#0066ff]/20"
@@ -68,7 +68,7 @@ export default function Footer() {
                     <Github size={16} />
                   </Link>
                   <Link
-                    href="https://x.com/codeindu"
+                    href="https://x.com/mendsec"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-8 h-8 rounded-full bg-[#0066ff]/10 flex items-center justify-center text-gray-400 hover:text-white hover:bg-[#0066ff]/20"
@@ -76,7 +76,7 @@ export default function Footer() {
                     <Twitter size={16} />
                   </Link>
                   <Link
-                    href="https://www.instagram.com/its_sigma_vikki/"
+                    href="https://www.instagram.com/mendsec/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-8 h-8 rounded-full bg-[#0066ff]/10 flex items-center justify-center text-gray-400 hover:text-white hover:bg-[#0066ff]/20"
@@ -85,7 +85,7 @@ export default function Footer() {
                   </Link>
 
                   <Link
-                    href="https://linkedin.in"
+                    href="https://linkedin.in/mendsec"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-8 h-8 rounded-full bg-[#0066ff]/10 flex items-center justify-center text-gray-400 hover:text-white hover:bg-[#0066ff]/20"
@@ -192,7 +192,7 @@ export default function Footer() {
                 <ul className="space-y-2">
                   <li className="flex items-center gap-2 text-gray-400 text-sm">
                     <Mail size={14} />
-                    <span>saasgenix@gmail.com</span>
+                    <span>support@mendsec.com</span>
                   </li>
                   <li>
                     <Link
@@ -232,7 +232,7 @@ export default function Footer() {
 
             <div className="border-t border-[#0066ff]/20 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center">
               <div className="text-gray-500 text-sm">
-                © 2025 CodeIndu. All rights reserved.
+                © 2025 Mendsec. All rights reserved.
               </div>
 
               <div className="flex gap-6 mt-4 md:mt-0">
@@ -247,18 +247,6 @@ export default function Footer() {
                   className="text-gray-500 hover:text-[#0066ff] text-sm"
                 >
                   Privacy Policy
-                </Link>
-                <Link
-                  href="refund"
-                  className="text-gray-500 hover:text-[#0066ff] text-sm"
-                >
-                  Refund
-                </Link>
-                <Link
-                  href="disclaimer"
-                  className="text-gray-500 hover:text-[#0066ff] text-sm"
-                >
-                  Disclaimer
                 </Link>
               </div>
             </div>

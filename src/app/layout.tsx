@@ -23,10 +23,10 @@ const geistMono = Geist_Mono({
 
 //  SEO Metadata
 export const metadata: Metadata = {
-  metadataBase: new URL("https://codeindu.com"),
-  title: "CodeIndu - Affordable IT Consulting & Software Development Services",
+  metadataBase: new URL("https://mendsec.com"),
+  title: "mendsec - Code Innovative Network for Digital Upliftment.",
   description:
-    "Codeindu offers affordable and expert IT consulting services, custom software development, AI solutions, and digital transformation for startups and enterprises in India and globally. Partner with us for scalable, on-time, and budget-friendly tech solutions.",
+    "mendsec offers affordable and expert IT consulting services, custom software development, AI solutions, and digital transformation for startups and enterprises in India and globally. Partner with us for scalable, on-time, and budget-friendly tech solutions.",
   keywords: [
     "IT consulting services",
     "affordable IT consultancy",
@@ -35,32 +35,32 @@ export const metadata: Metadata = {
     "AI software solutions",
     "IT services for startups",
     "budget software company",
-    "CodeIndu IT consulting India",
+    "mendsec IT consulting India",
     "top IT consultancy 2025",
     "trusted software agency India",
     "MVP app development",
     "SaaS product developers",
     "enterprise tech partner",
   ],
-  creator: "CodeIndu Team",
+  creator: "mendsec Team",
   authors: [
     {
       name: "Vikki Verma",
-      url: "https://codeindu.com/about-us/",
+      url: "https://mendsec.com/about-us/",
     },
   ],
   openGraph: {
-    title: "CodeIndu - Trusted IT Consulting & Software Solutions",
+    title: "mendsec - Trusted IT Consulting & Software Solutions",
     description:
-      "Get cost-effective, scalable IT consultancy and development with CodeIndu - India's trusted partner for software, AI, and digital innovation.",
-    url: "https://codeindu.com",
-    siteName: "Codeindu",
+      "Get cost-effective, scalable IT consultancy and development with mendsec - India's trusted partner for software, AI, and digital innovation.",
+    url: "https://mendsec.com",
+    siteName: "mendsec",
     images: [
       {
-        url: "https://codeindu.com/logo/logo.png",
+        url: "https://mendsec.com/logo/logo.png",
         width: 1200,
         height: 630,
-        alt: "Codeindu logo",
+        alt: "mendsec logo",
       },
     ],
     locale: "en_US",
@@ -68,13 +68,13 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    site: "@codeindu",
-    creator: "@codeindu",
+    site: "@mendsec",
+    creator: "@mendsec",
     title:
-      "CodeIndu - Affordable IT & Software Services for Growing Businesses",
+      "mendsec - Affordable IT & Software Services for Growing Businesses",
     description:
-      "Partner with CodeIndu for custom software, web apps, AI automation, and IT consulting - all within your budget.",
-    images: ["https://codeindu.com/twitter-card.jpg"],
+      "Partner with mendsec for custom software, web apps, AI automation, and IT consulting - all within your budget.",
+    images: ["https://mendsec.com/twitter-card.jpg"],
   },
   icons: {
     icon: "/favicon.ico",
@@ -82,7 +82,7 @@ export const metadata: Metadata = {
     shortcut: "/favicon-32x32.png",
   },
   alternates: {
-    canonical: "https://codeindu.com",
+    canonical: "https://mendsec.com",
     languages: {
       "en-IN": "/",
       "hi-IN": "/hi",

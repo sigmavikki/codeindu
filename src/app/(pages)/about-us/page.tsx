@@ -19,7 +19,7 @@ export default function AboutUsPage() {
           <h1 className="text-5xl font-extrabold leading-tight">
             About{" "}
             <span className="bg-gradient-to-r from-blue-500 to-purple-600 text-transparent bg-clip-text">
-              CodeIndu
+              Mendsec
             </span>
           </h1>
           <p className="text-gray-400 mt-4 text-xl">
@@ -32,7 +32,7 @@ export default function AboutUsPage() {
           <div>
             <h2 className="text-3xl font-semibold mb-4">Who We Are</h2>
             <p className="text-gray-300 leading-loose">
-              Founded by <strong>Vikki Verma</strong>, CodeIndu is a tech
+              Founded by <strong>Vibhav Malviya</strong>, Mendsec is a tech
               startup from India building scalable digital products for modern
               businesses. From software development to automation and AI, we
               deliver what enterprises and startups need to thrive.
@@ -200,8 +200,8 @@ export default function AboutUsPage() {
         <section className="text-center max-w-3xl mx-auto">
           <h2 className="text-3xl font-semibold mb-4">Meet the Founder</h2>
           <p className="text-gray-300 leading-loose">
-            <strong>Vikki Verma</strong> is a full-stack engineer and visionary
-            who launched CodeIndu to transform how startups and businesses adopt
+            <strong>Vibhav Malviya</strong> is a full-stack engineer and visionary
+            who launched Mendsec to transform how startups and businesses adopt
             digital tech. With expertise in automation, AI, and scalable
             systems, his mission is to make intelligent software accessible,
             practical, and powerful.

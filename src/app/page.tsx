@@ -83,19 +83,19 @@ export default function HomePage() {
         <div className="container mx-auto px-4 flex flex-col items-center text-center z-10">
           <div className="glitch-container relative mb-4 inline-flex">
             <div className="text-sm font-mono uppercase tracking-wider text-[#e5f0ff] py-1 px-3 rounded-full bg-[#0066ff]/10 border border-[#0066ff]/20 mb-4">
-              Codeindu - Code Innovative Network for Digital Upliftment.
+              Mendsec Innovations Private Limited
             </div>
           </div>
 
           <h1 className="text-4xl md:text-4xl lg:text-6xl font-bold mb-6 relative font-mono tracking-tight">
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-gray-200 to-white">
-              We code what you imagine.
+              Mending security, powering innovation.
             </span>
             <div className="absolute -inset-0.5 bg-[#0066ff]/20 blur opacity-30 animate-pulse"></div>
           </h1>
 
           <p className="text-lg md:text-xl text-gray-400 max-w-3xl mb-8">
-            At CodeIndu, we turn your business vision into reality with
+            At mendsec, we turn your business vision into reality with
             innovative IT solutions. As a premier IT consultancy, we focus on
             creating custom web, mobile, and AI-powered applications designed to
             meet the specific needs of startups and enterprises.
@@ -103,10 +103,10 @@ export default function HomePage() {
 
           <div className="flex flex-col sm:flex-row items-center gap-4 mb-12">
             <Button
-              className="bg-[#0066ff] hover:bg-[#0066ff]/90 text-white px-8 py-6 rounded-md text-lg cursor-pointer"
+              className="bg-gradient-to-r from-blue-500 via-blue-500 to-pink-500 hover:from-blue-600 hover:to-pink-600 text-white px-8 py-6 rounded-md text-lg cursor-pointer"
               onClick={() => (window.location.href = "/contact-us")}
             >
-              Lets builds
+              Lets schedule a call
             </Button>
             <Button
               variant="outline"
@@ -211,7 +211,7 @@ export default function HomePage() {
       <section id="why-choose" className="py-16 bg-[#0c0c0c] text-white">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">
-            Why Choose <span className="text-blue-500">CodeIndu?</span>
+            Why Choose <span className="text-blue-500">mendsec?</span>
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -339,10 +339,10 @@ export default function HomePage() {
               <FaWhatsapp /> Chat on WhatsApp
             </a>
             <a
-              href="mailto:hello@codeindu.com"
+              href="mailto:businessmendsec@gmail.com"
               className="flex items-center gap-2 hover:text-yellow-400 transition"
             >
-              <FaEnvelope /> Email: hello@codeindu.com
+              <FaEnvelope /> Email: hello@mendsec.com
             </a>
           </div>
         </div>

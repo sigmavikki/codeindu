@@ -15,7 +15,7 @@ export default function RegisterPage() {
           <h1 className="text-4xl font-bold mb-6">Register</h1>
           <div>
             <h3 className="text-xl font-semibold mb-2">
-              Welcome to <span className="text-blue-400">Codeindu</span>
+              Welcome to <span className="text-blue-400">Mendsec</span>
             </h3>
             <p className="text-gray-300">
               Grow with high-tech, faster and future-based technology.
